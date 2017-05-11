@@ -1,0 +1,23 @@
+Edit configure/RELEASE to set the variable SUPPORT
+
+If you don't want to build all of the default target architectures
+(see the variable CROSS_COMPILER_TARGET_ARCHS in 
+synApps/support/configure/CONFIG, or in base/configure/CONFIG_SITE),
+then edit configure/CONFIG to set the variable CROSS_COMPILER_TARGET_ARCHS.
+
+Edit iocBoot/ioc*/Makefile to set the variable ARCH
+
+Edit start_epics_xxx, start_epics_xxx.bash, and setup_epics_common
+to set the variables EPICS_APP and EPICS_APP_ADL_DIR
+
+Edit iocBoot/ioc*/*.cmd and iocBoot/ioc*/*.substitutions
+to agree with your hardware
+
+Edit iocBoot/ioc*/auto*.req to agree with your software
+
+chmod a+w,g+s iocBoot/ioc*/autosave
+
+Run synApps/support/utils/changePrefix to change the prefix from 'xxx'
+to whatever you want
+
+Run gnumake
