@@ -1,6 +1,11 @@
 # EPICS IOC on Raspberry Pi with sensors
 
-This started as an EPICS synApps 5.8 IOC (xxx-5-8-3 template)
+This started as an 
+[EPICS](http://www.aps.anl.gov/epics)
+[3.15.5](http://www.aps.anl.gov/epics/base/R3-15/5.php)
+[synApps](https://www1.aps.anl.gov/BCDA/synApps)
+[5.8](https://github.com/EPICS-synApps/support/releases/tag/synApps_5_8)
+IOC ([xxx-5-8-3 template](https://github.com/epics-modules/xxx/releases/tag/R5-8-3))
 to watch various sensors using the GPIO capabilities of
 the Raspberry Pi.
 
