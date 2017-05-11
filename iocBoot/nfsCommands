@@ -1,0 +1,17 @@
+
+routeShow
+
+# The following lines are examples of what might be required to use NFS,
+# rather than FTP, for booting the VME crate, and generally for reading
+# and writing files on the server.
+#
+nfsMount("s100dserv","/APSshare","/APSshare")
+hostAdd("oxygen","164.54.22.10")
+nfsMount("oxygen","/export/oxygen","/home/oxygen")
+nfsMount("oxygen","/export/oxygen4","/home/oxygen4")
+hostAdd("mooneylinux","164.54.51.75")
+nfsMount("mooneylinux","/local","/local")
+
+nfsDevShow
+# The following line eliminates "cksum: out of data" messages due to DHCP
+#proxyPortFwdOff(67)

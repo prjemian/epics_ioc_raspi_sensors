@@ -1,0 +1,15 @@
+
+file "$(OPTICS)/opticsApp/Db/fb_epid.db"
+  {
+    {
+        P=raspi:epid1,  
+	IN=raspi:epid1:sim.VAL, 
+	OUT=raspi:epid1:sim.D, 
+	MODE=PID,   
+	CALC=A,    
+	PERMIT1="raspi:epid1:on.VAL",      
+	PERMIT2="",      
+	PERMIT3="",      
+	PERMIT4=""
+    }
+  }

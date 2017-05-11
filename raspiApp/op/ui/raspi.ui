@@ -1,0 +1,2397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>MainWindow</class>
+<widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+        <rect>
+            <x>1183</x>
+            <y>25</y>
+            <width>440</width>
+            <height>180</height>
+        </rect>
+    </property>
+    <property name="styleSheet">
+        <string>
+
+QWidget#centralWidget {background: rgba(236, 236, 236, 255);}
+QPushButton::menu-indicator {image: url(none.png); width: 0}
+
+</string>
+    </property>
+    <widget class="QWidget" name="centralWidget">
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_0">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>20</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Tables</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Table1 (S);Table1 (L);Table2 (S) (no Z);Table2 (L) (no Z);Table3 (S) (no X);Table3 (L) (no X);Table4 (S) (no X or Z);Table4 (L) (no X or Z);ASRP mirror table</string>
+            </property>
+            <property name="files">
+                <string>table.adl;table_full.adl;table.adl;table_full.adl;table.adl;table_full.adl;table.adl;table_full.adl;ASRPmirrorTable.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Q=Table1,T=table1,M0X=m1,M0Y=m2,M1Y=m3,M2X=m4,M2Y=m5,M2Z=m6;P=raspi:,Q=Table1,T=table1,M0X=m1,M0Y=m2,M1Y=m3,M2X=m4,M2Y=m5,M2Z=m6;P=raspi:,Q=Table2,T=table2,M0X=m1,M0Y=m2,M1Y=m3,M2X=m4,M2Y=m5,M2Z=junk;P=raspi:,Q=Table2,T=table2,M0X=m1,M0Y=m2,M1Y=m3,M2X=m4,M2Y=m5,M2Z=junk;P=raspi:,Q=Table3,T=table3,M0X=junk,M0Y=m2,M1Y=m3,M2X=junk,M2Y=m5,M2Z=m6;P=raspi:,Q=Table3,T=table3,M0X=junk,M0Y=m2,M1Y=m3,M2X=junk,M2Y=m5,M2Z=m6;P=raspi:,Q=Table4,T=table4,M0X=junk,M0Y=m2,M1Y=m3,M2X=junk,M2Y=m5,M2Z=junk;P=raspi:,Q=Table4,T=table4,M0X=junk,M0Y=m2,M1Y=m3,M2X=junk,M2Y=m5,M2Z=junk;P=raspi:,TBL=mt1,VERT=raspi:m7,PITCH=raspi:m8</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_1">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Motors</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>1-8;9-16;17-24;25-32;33-40;41-48;soft motors 1-10;Pseudo-motors;motor status 16</string>
+            </property>
+            <property name="files">
+                <string>topMotors8.adl;topMotors8.adl;topMotors8.adl;topMotors8.adl;topMotors8.adl;topMotors8.adl;softMotors10.adl;topMotors4.adl;motorStatus16.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,M1=m1,M2=m2,M3=m3,M4=m4,M5=m5,M6=m6,M7=m7,M8=m8;P=raspi:,M1=m9,M2=m10,M3=m11,M4=m12,M5=m13,M6=m14,M7=m15,M8=m16;P=raspi:,M1=m17,M2=m18,M3=m19,M4=m20,M5=m21,M6=m22,M7=m23,M8=m24;P=raspi:,M1=m25,M2=m26,M3=m27,M4=m28,M5=m29,M6=m30,M7=m31,M8=m32;P=raspi:,M1=m33,M2=m34,M3=m35,M4=m36,M5=m37,M6=m38,M7=m39,M8=m40;P=raspi:,M1=m41,M2=m42,M3=m43,M4=m44,M5=m45,M6=m46,M7=m47,M8=m48;P=raspi:,SM1=SM1,SM2=SM2,SM3=SM3,SM4=SM4,SM5=SM5,SM6=SM6,SM7=SM7,SM8=SM8,SM9=SM9,SM10=SM10;P=raspi:,M1=pm1,M2=pm2,M3=pm3,M4=pm4;P=raspi:</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_2">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>60</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Monochrom</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Kohzu Graphic (GEOM 1);Kohzu Graphic (GEOM 2);KohzuSeq (tiny);KohzuSeq;KohzuSeq (All);Energy-scan parameters;Theta-scan parameters;Wavelength-scan parameters</string>
+            </property>
+            <property name="files">
+                <string>kohzuGraphic.adl;kohzu2Graphic.adl;kohzuSeqCtl_tiny.adl;kohzuSeqCtl.adl;kohzuSeqCtl_All.adl;scanParms.adl;scanParms.adl;scanParms.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,mTH=m9,mY1=m10,mZ2=m11,mCHI2=m12,mTH2=m13,mX=m14,mY=m15,mX2=m16,QE=BraggE,PVE=BraggEAO,QL=BraggLambda,PVL=BraggLambdaAO,QTh=BraggTheta,PVTh=BraggThetaAO;P=raspi:,mTH=m9,mY2=m10,mZ2=m11,mCHI2=m12,mTH2=m13,mX=m14,mY=m15,mX2=m16,QE=BraggE,PVE=BraggEAO,QL=BraggLambda,PVL=BraggLambdaAO,QTh=BraggTheta,PVTh=BraggThetaAO;P=raspi:;P=raspi:;P=raspi:;P=raspi:,Q=BraggE,PV=BraggEAO;P=raspi:,Q=BraggTheta,PV=BraggThetaAO;P=raspi:,Q=BraggLambda,PV=BraggLambdaAO</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_3">
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>0</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Scan</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Scan1 (for all scans);Scan2 (for 2D &amp; higher scans);Scan3 (for 3D &amp; higher scans);Scan4 (for 4D scans);ScanH (for Hardware-assisted scans);test scanParms2Pos;saveData controls;aux scan;scanProgress;scan1Menu</string>
+            </property>
+            <property name="files">
+                <string>scan.adl;scan.adl;scan.adl;scan.adl;scan.adl;scanParms2Pos.adl;scan_saveData.adl;scanAux.adl;ProgressBar.adl;configMenu.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,N=1,S=scan1;P=raspi:,N=2,S=scan2;P=raspi:,N=3,S=scan3;P=raspi:,N=4,S=scan4;P=raspi:,N=H,S=scanH;P=raspi:,Q=m7_8,SCAN=raspi:scan1,PV1=raspi:m7,PV2=raspi:m8;P=raspi:;P=raspi:,S=scanAux;P=raspi:,B=raspi:scanProgress:;P=raspi:,CONFIG=scan1</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_4">
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>100</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Scalers</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Scaler 1;Scaler 2;Scaler 3;Scaler1 (16 ch);Scaler1 (32 ch);Scaler1 (64 ch);Scaler 1 modCalc;SIS3820 scaler32;SIS3820 scaler8</string>
+            </property>
+            <property name="files">
+                <string>scaler16m.adl;scaler.adl;scaler.adl;scaler16.adl;scaler32.adl;scaler64.adl;scaler16m.adl;scaler32.adl;scaler.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,S=scaler1;P=raspi:,S=scaler2;P=raspi:,S=scaler3;P=raspi:,S=scaler1;P=raspi:,S=scaler1;P=raspi:,S=scaler1;P=raspi:,S=scaler1;P=raspi:3820:,S=scaler1;P=raspi:3820:,S=scaler1</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_5">
+            <property name="geometry">
+                <rect>
+                    <x>210</x>
+                    <y>100</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>40</red>
+                    <green>147</green>
+                    <blue>21</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-DMM</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Keithley 2000 DMM #1;Keithley 2000 DMM #2</string>
+            </property>
+            <property name="files">
+                <string>Keithley2kDMM_mf.adl;Keithley2kDMM_mf.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Dmm=D1;P=raspi:,Dmm=D2</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_6">
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>120</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-HP</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>HP Laser Axis 1;HP Laser Axis 2</string>
+            </property>
+            <property name="files">
+                <string>HPLaserAxis.adl;HPLaserAxis.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Q=HPLaser1;P=raspi:,Q=HPLaser2</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_7">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>100</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-SGM mono</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Spherical Grating Monochromator (tiny);Spherical Grating Monochromator</string>
+            </property>
+            <property name="files">
+                <string>SGM_tiny.adl;SGM.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,N=1,M_x=m7,M_rIn=m6,M_rOut=m8;P=raspi:,N=1,M_x=m7,M_rIn=m6,M_rOut=m8</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_8">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>40</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Mirror</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>2-post Mirror; </string>
+            </property>
+            <property name="files">
+                <string>2postMirror.adl;2postMirror.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Q=M1,mDn=m1,mUp=m2;P=raspi:,Q=M1,mDn=m1,mUp=m2</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_9">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>80</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-HR mono</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>High resolution monochromator (nested);High resolution monochromator (symmetric);High resolution monochromator control</string>
+            </property>
+            <property name="files">
+                <string>hr_nested.adl;hr_symmetric.adl;hrSeqCtl_All.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,N=1;P=raspi:,N=1;P=raspi:,N=1</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_10">
+            <property name="geometry">
+                <rect>
+                    <x>280</x>
+                    <y>60</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Status</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>IOC Status soft ioc;IOC Status vxworks ioc;save_restore Status</string>
+            </property>
+            <property name="files">
+                <string>ioc_stats_soft.adl;ioc_stats_vxworks.adl;save_restoreStatus.adl</string>
+            </property>
+            <property name="args">
+                <string>ioc=raspi;ioc=raspi;P=raspi:</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_11">
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>40</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-GenericIO</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>generic VME;generic CAMAC;asyn GPIB;deviceCmdReply 1;deviceCmdReply 2;deviceCmdReply 3;deviceCmdReply 4;deviceCmdReply 5;deviceCmdReply 6;deviceCmdReply 7;deviceCmdReply 8</string>
+            </property>
+            <property name="files">
+                <string>recVme.adl;CAMAC_IO.adl;asynOctet.adl;deviceCmdReply.adl;deviceCmdReply.adl;deviceCmdReply.adl;deviceCmdReply.adl;deviceCmdReply.adl;deviceCmdReply.adl;deviceCmdReply.adl;deviceCmdReply.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Q=vme1;REC=raspi:camac1;P=raspi:,R=gpib1;P=raspi:,N=1;P=raspi:,N=2;P=raspi:,N=3;P=raspi:,N=4;P=raspi:,N=5;P=raspi:,N=6;P=raspi:,N=7;P=raspi:,N=8</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_12">
+            <property name="geometry">
+                <rect>
+                    <x>280</x>
+                    <y>20</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-OPS</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>1 BM BPM info;1 ID BPM info;1 ID basic control;1 ID sync-scan control;new ID control;new ID control (us);24 hr. Beam History;24 hr. beam history, etc.</string>
+            </property>
+            <property name="files">
+                <string>xx_BM_BPM.adl;xx_ID_BPM.adl;IDControl.adl;IDSyncScan.adl;xxIDCtrl.adl;xxIDCtrl.adl;beamHistory.adl;beamHistory_full.adl</string>
+            </property>
+            <property name="args">
+                <string>xx=28us;xx=28us;ID=28us;ID=28us;P=raspi:,xx=28;P=raspi:,xx=28us;P=raspi:,xx=28us;P=raspi:,xx=28us</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_13">
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>0</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Filter</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string> ;User Filter;User Filter Setup;XIA pfcu;XIA pfcu (synApps 5.2.1);PF4 Filter;PF4 Filter small;PF4 Filter fake I/O;PF4 FilterBank A;Alt PF4 filter 16;Alt PF4 filter 8</string>
+            </property>
+            <property name="files">
+                <string>;2filter.adl;2filter_setup.adl;pf4.adl;pf4dual.adl;pf4.adl;pf4small.adl;pf4.adl;pf4Bank.adl;filter_8_8_more.adl;filter_8_0_more.adl</string>
+            </property>
+            <property name="args">
+                <string>;P=raspi:,Q1=fltr1:,Q2=fltr2:,LOCK1=fltr_1_2:,LOCK2=fltr_1_2:;P=raspi:,Q1=fltr1:,Q2=fltr2:,LOCK1=fltr_1_2:,LOCK2=fltr_1_2:;P=raspi:,H=pf401:,A=A,B=B,PV=,MONO=;P=raspi:,PV1=raspi:pf4_1:,PV2=raspi:Unidig1Bo,MONO=raspi:BraggERdbkAO;P=raspi:,H=pf4:,A=A,B=B,MONO=raspi:BraggEAO,B1=raspi:Unidig1Bo3,B2=raspi:Unidig1Bo4,B3=raspi:Unidig1Bo5,B4=raspi:Unidig1Bo6,B5=raspi:Unidig1Bo7,B6=raspi:Unidig1Bo8,B7=raspi:Unidig1Bo9,B8=raspi:Unidig1Bo10;P=raspi:,H=pf4:,A=A,B=B,MONO=raspi:BraggEAO,B1=raspi:Unidig1Bo3,B2=raspi:Unidig1Bo4,B3=raspi:Unidig1Bo5,B4=raspi:Unidig1Bo6,B5=raspi:Unidig1Bo7,B6=raspi:Unidig1Bo8,B7=raspi:Unidig1Bo9,B8=raspi:Unidig1Bo10;P=raspi:,H=pf4:,A=A,B=B;P=raspi:,H=pf4:,B=A;P=raspi:,R=filter:;P=raspi:,R=filter:</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_14">
+            <property name="geometry">
+                <rect>
+                    <x>280</x>
+                    <y>40</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-BunchClk</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Bunch Clock Generator;Bunch Clock display A;Bunch Clock 3id Top screen</string>
+            </property>
+            <property name="files">
+                <string>BunchClkGen.adl;BunchClkGenA.adl;BunchClkGenTop.adl</string>
+            </property>
+            <property name="args">
+                <string>UNIT=raspi:BnchClkGen;UNIT=raspi:BnchClkGen;UNIT=raspi:BnchClkGen</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_15">
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>40</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Piezo</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Queensgate piezo (3id);Queensgate piezo (std);Nano2k (ch 1);Nano2k (ch 2);Huber DMC9200 servo controller</string>
+            </property>
+            <property name="files">
+                <string>pzt_3id.adl;pzt.adl;Nano2k.adl;Nano2k.adl;HuberDMC4.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:;P=raspi:;P=raspi:,S=nano,p=1;P=raspi:,S=nano,p=2;P=raspi:,Q=DMC1:,M1=1,M2=2,M3=3,M4=4</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_16">
+            <property name="geometry">
+                <rect>
+                    <x>210</x>
+                    <y>60</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Encoders</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Heidenhain AWE1024;Heidenhain AWE1024;Heidenhain ND261;Heidenhain IK320</string>
+            </property>
+            <property name="files">
+                <string>HeidEncoder.adl;HeidEncoder.adl;HeidND261.adl;HeidIK320_group.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:, A=6;P=raspi:, A=7;P=raspi:;P=raspi:,card=card0,group=5</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_17">
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>100</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Autocoll</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Autocollimator; </string>
+            </property>
+            <property name="files">
+                <string>Elcomat.adl;Elcomat.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:;P=raspi:</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_18">
+            <property name="geometry">
+                <rect>
+                    <x>280</x>
+                    <y>0</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-4 Circle</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>orientation matrix;orient9</string>
+            </property>
+            <property name="files">
+                <string>orient.adl;orient9.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,O=_0,PM=raspi:,mTTH=SM1,mTH=SM2,mCHI=SM3,mPHI=SM4;P=raspi:,PM=raspi:,mTTH=SM1,mTH=SM2,mCHI=SM3,mPHI=SM4</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_19">
+            <property name="geometry">
+                <rect>
+                    <x>210</x>
+                    <y>0</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-MCA</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Canberra AIM Multichannel Analyzer;MCA with ROI&apos;s;ADC 1;TCA 1;HVPS 1;AMP 1;DSP 1;soft MCA</string>
+            </property>
+            <property name="files">
+                <string>mca_small.adl;mca.adl;xxIcbAdc.adl;xxIcbTCA.adl;xxIcbHVPS.adl;xxIcbAmp.adl;dsp9660Gain.adl;mca_small.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,M=aim_adc1;P=raspi:,M=aim_adc1;P=raspi:,ADC=adc1;P=raspi:,TCA=tca1;P=raspi:,HVPS=hvps1;P=raspi:,AMP=amp1;P=raspi:,DSP=dsp1;P=raspi:,M=softMCA</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_20">
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>80</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-4-step</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>4-step measurement</string>
+            </property>
+            <property name="files">
+                <string>4step.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:</string>
+            </property>
+            <property name="removeParent">
+                <string>false</string>
+            </property>
+        </widget>
+        <widget class="caMessageButton" name="caMessageButton_0">
+            <property name="geometry">
+                <rect>
+                    <x>350</x>
+                    <y>108</y>
+                    <width>90</width>
+                    <height>29</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>EPushButton::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>raspi:allstop.VAL</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>251</red>
+                    <green>243</green>
+                    <blue>74</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>253</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>All Stop</string>
+            </property>
+            <property name="pressMessage">
+                <string>1</string>
+            </property>
+            <property name="colorMode">
+                <enum>caMessageButton::Static</enum>
+            </property>
+        </widget>
+        <widget class="caFrame" name="caFrame_0">
+            <property name="geometry">
+                <rect>
+                    <x>350</x>
+                    <y>78</y>
+                    <width>84</width>
+                    <height>29</height>
+                </rect>
+            </property>
+            <widget class="caLabel" name="caLabel_0">
+                <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>10</red>
+                        <green>0</green>
+                        <blue>184</blue>
+                    </color>
+                </property>
+                <property name="background">
+                    <color alpha="0">
+                        <red>10</red>
+                        <green>0</green>
+                        <blue>184</blue>
+                    </color>
+                </property>
+                <property name="visibility">
+                    <enum>caLabel::IfZero</enum>
+                </property>
+                <property name="channel">
+                    <string>raspi:alldone.VAL</string>
+                </property>
+                <property name="text">
+                    <string>Moving</string>
+                </property>
+                <property name="fontScaleMode">
+                    <enum>ESimpleLabel::WidthAndHeight</enum>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>1</x>
+                        <y>1</y>
+                        <width>90</width>
+                        <height>25</height>
+                    </rect>
+                </property>
+                <property name="alignment">
+                    <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+            </widget>
+            <widget class="caLabel" name="caLabel_1">
+                <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>10</red>
+                        <green>0</green>
+                        <blue>184</blue>
+                    </color>
+                </property>
+                <property name="background">
+                    <color alpha="0">
+                        <red>10</red>
+                        <green>0</green>
+                        <blue>184</blue>
+                    </color>
+                </property>
+                <property name="visibility">
+                    <enum>caLabel::IfNotZero</enum>
+                </property>
+                <property name="channel">
+                    <string>raspi:alldoneBlink.VAL</string>
+                </property>
+                <property name="text">
+                    <string>Moving</string>
+                </property>
+                <property name="fontScaleMode">
+                    <enum>ESimpleLabel::WidthAndHeight</enum>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>2</x>
+                        <y>2</y>
+                        <width>90</width>
+                        <height>25</height>
+                    </rect>
+                </property>
+                <property name="alignment">
+                    <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+            </widget>
+            <widget class="caLabel" name="caLabel_2">
+                <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>153</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                </property>
+                <property name="background">
+                    <color alpha="0">
+                        <red>153</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                </property>
+                <property name="visibility">
+                    <enum>caLabel::IfZero</enum>
+                </property>
+                <property name="channel">
+                    <string>raspi:alldone.VAL</string>
+                </property>
+                <property name="text">
+                    <string>Moving</string>
+                </property>
+                <property name="fontScaleMode">
+                    <enum>ESimpleLabel::WidthAndHeight</enum>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>90</width>
+                        <height>25</height>
+                    </rect>
+                </property>
+                <property name="alignment">
+                    <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+            </widget>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_21">
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>60</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Array</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>interp;arrayTest;pvHistory 1;interpNew</string>
+            </property>
+            <property name="files">
+                <string>interp.adl;arrayTest.adl;pvHistory.adl;interpNew.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:;P=raspi:;P=raspi:,N=1;P=raspi:,Q=1</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_22">
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>60</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-DAC</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>vme DAC 1 Chans 1-8;vme DAC 2 Chans 1-8;dac128V 1 Chans 1-8;vme DAC 1 Chans 1-8</string>
+            </property>
+            <property name="files">
+                <string>VME_DAC8.adl;VME_DAC8.adl;topDAC8.adl;topDAC8.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,D=1;P=raspi:,D=2;P=raspi:,D=3;P=raspi:,D=1</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_23">
+            <property name="geometry">
+                <rect>
+                    <x>210</x>
+                    <y>20</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-multiMCA</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>3 element detector;summed spectrum (mca0);sum control;HV power supply</string>
+            </property>
+            <property name="files">
+                <string>3element.adl;mca_small.adl;mcaSum3.adl;xxIcbHVPS.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:med:;P=raspi:med:,M=mca0;P=raspi:med:;P=raspi:med:,HVPS=hvps1</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_24">
+            <property name="geometry">
+                <rect>
+                    <x>210</x>
+                    <y>40</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Struck</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>SIS38XX</string>
+            </property>
+            <property name="files">
+                <string>SIS38XX.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:3820:</string>
+            </property>
+            <property name="removeParent">
+                <string>false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_25">
+            <property name="geometry">
+                <rect>
+                    <x>210</x>
+                    <y>120</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>40</red>
+                    <green>147</green>
+                    <blue>21</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Digital</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>IpUnidig I/O; Acromag 8 in; Acromag 8 out; Acromag 16 out; Acromag 16 in</string>
+            </property>
+            <property name="files">
+                <string>IpUnidig_top.adl;Acromag_8in.adl;Acromag_8out.adl;Acromag_16out.adl;Acromag_16in.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,R=Unidig1;P=raspi:,A=1,CH0=0,CH1=1,CH2=2,CH3=3,CH4=4,CH5=5,CH6=6,CH7=7;P=raspi:,A=1,CH0=0,CH1=1,CH2=2,CH3=3,CH4=4,CH5=5,CH6=6,CH7=7;P=raspi:,A=1;P=raspi:,A=1</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_26">
+            <property name="geometry">
+                <rect>
+                    <x>280</x>
+                    <y>100</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>40</red>
+                    <green>147</green>
+                    <blue>21</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-quadEM</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Quad Electrometer Ch.1;Quad Electrometer Ch.2;Quad Electrometer Ch.3;Quad Electrometer Ch.4;Quad Electrometer MCAs;Vertical feedback;Horizontal feedback</string>
+            </property>
+            <property name="files">
+                <string>quadEM.adl;quadEM.adl;quadEM.adl;quadEM.adl;quadEM_med.adl;pid_control.adl;pid_control.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,EM=EM1;P=raspi:,EM=EM2;P=raspi:,EM=EM3;P=raspi:,EM=EM4;P=raspi:quadEM:, P_FFT=raspi:quadEM_FFT:;P=raspi:, PID=quadEMVertical,TITLE=Vertical_Feedback;P=raspi:, PID=quadEMHorizontal,TITLE=Horizontal_Feedback</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_27">
+            <property name="geometry">
+                <rect>
+                    <x>280</x>
+                    <y>120</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-serial</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>asyn record serial1;asyn record serial2;asyn record serial3;asyn record serial4;asyn record serial5;asyn record serial6;asyn record serial7;asyn record serial8</string>
+            </property>
+            <property name="files">
+                <string>asynOctet.adl;asynOctet.adl;asynOctet.adl;asynOctet.adl;asynOctet.adl;asynOctet.adl;asynOctet.adl;asynOctet.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,R=asyn_1;P=raspi:,R=asyn_2;P=raspi:,R=asyn_3;P=raspi:,R=asyn_4;P=raspi:,R=asyn_5;P=raspi:,R=asyn_6;P=raspi:,R=asyn_7;P=raspi:,R=asyn_8</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_28">
+            <property name="geometry">
+                <rect>
+                    <x>210</x>
+                    <y>140</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-caputRec</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>caputRecorder;caputRecorderA</string>
+            </property>
+            <property name="files">
+                <string>caputRecorder.adl;caputRecorder.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,L=raspi:;P=raspiA:,L=raspi:</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_29">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>120</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-CF</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>CoarseFine</string>
+            </property>
+            <property name="files">
+                <string>CoarseFineMotor.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:cf1:,M=MOT,PM=raspi:,CM=m7,FM=m8</string>
+            </property>
+            <property name="removeParent">
+                <string>false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_30">
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>140</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-XIA shutter</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>XIA shutter 1;XIA shutter 2</string>
+            </property>
+            <property name="files">
+                <string>XIA_shutter.adl;XIA_shutterTry.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,S=shutter1;P=raspi:,S=shutter2</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_31">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>140</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Io</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Io</string>
+            </property>
+            <property name="files">
+                <string>Io.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:Io:,S=raspi:scaler1,MONO=raspi:BraggEAO</string>
+            </property>
+            <property name="removeParent">
+                <string>false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_32">
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>20</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Slits</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Slit 1 (H);Slit 1 (V);Slit 1 Graphic;Slit Motors;Slit 2 (H) (soft);Slit 2 (V) (soft);Slit 2 Graphic (soft);XIA slit 1 (H);XIA slit 1 (V)</string>
+            </property>
+            <property name="files">
+                <string>2slit.adl;2slit.adl;4slitGraphic.adl;motor4x.adl;2slit_soft.adl;2slit_soft.adl;4slitGraphic_soft.adl;xia_slit.adl;xia_slit.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,SLIT=Slit1H,mXp=m5,mXn=m6;P=raspi:,SLIT=Slit1V,mXp=m3,mXn=m4;P=raspi:,SLIT=Slit_1,H=Slit1H,mXp=m3,mXn=m4,V=Slit1V,mYp=m5,mYn=m6;P=raspi:,M1=m3,M2=m4,M3=m5,M4=m6;P=raspi:,SLIT=Slit2H,mXp=m15,mXn=m16;P=raspi:,SLIT=Slit2V,mXp=m13,mXn=m14;P=raspi:,SLIT=Slit_2,H=Slit2H,mXp=m15,mXn=m16,V=Slit2V,mYp=m13,mYn=m14;P=raspi:,HSC=hsc1:;P=raspi:,HSC=hsc2:</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_33">
+            <property name="geometry">
+                <rect>
+                    <x>280</x>
+                    <y>80</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Love</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Love controllers</string>
+            </property>
+            <property name="files">
+                <string>LoveList4.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Q1=Love1,Q2=Love2,Q3=Love3,Q4=Love4</string>
+            </property>
+            <property name="removeParent">
+                <string>false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_34">
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>140</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-ramp_tweak</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>ramp/tweak rt1;ramp/tweak rt2</string>
+            </property>
+            <property name="files">
+                <string>ramp_tweak.adl;ramp_tweak.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Q=rt1;P=raspi:,Q=rt2</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_35">
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>120</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Preamps</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>SRS 570 Current Preamplifier #A1;SRS 570 Current Preamplifier #A2;SRS 570 Current Preamplifier #A3;SRS 570 Current Preamplifier #A4;SRS 570 Current Preamplifier #A5;Femto Current Preamplifier</string>
+            </property>
+            <property name="files">
+                <string>SR570_tiny.adl;SR570_tiny.adl;SR570_tiny.adl;SR570_tiny.adl;SR570_tiny.adl;femto.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,A=A1;P=raspi:,A=A2;P=raspi:,A=A3;P=raspi:,A=A4;P=raspi:,A=A5;P=raspi:,H=fem01:,F=seq01:,AC=raspi:Unidig1Bo9</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_36">
+            <property name="geometry">
+                <rect>
+                    <x>210</x>
+                    <y>80</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-TempCtrl</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>LakeShore Temp. Controller;Keithley DMM (thermistors);Eurotherm;Eurotherm 2k</string>
+            </property>
+            <property name="files">
+                <string>LakeShore.adl;KeithleyDMM.adl;Eurotherm.adl;Eurotherm2k.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Q=TC1;P=raspi:;P=raspi:;P=raspi:,TC=1</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_37">
+            <property name="geometry">
+                <rect>
+                    <x>350</x>
+                    <y>20</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-ML Mono</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>ml_monoGraphic;ml_monoSeq (tiny);ml_monoSeq;ml_monoSeq (All);Energy-scan parameters;Theta-scan parameters;Wavelength-scan parameters</string>
+            </property>
+            <property name="files">
+                <string>ml_monoGraphic.adl;ml_monoSeqCtl_tiny.adl;ml_monoSeqCtl.adl;ml_monoSeqCtl_All.adl;scanParms.adl;scanParms.adl;scanParms.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,mY1=m1,mZ1=m2,mY2=m9,mZ2=m8,mT1=m7,mT2=m10,mB=m11;P=raspi:;P=raspi:;P=raspi:;P=raspi:,Q=ml_monoE,PV=ml_monoE;P=raspi:,Q=ml_monoTheta,PV=ml_monoTheta;P=raspi:,Q=ml_monoLambda,PV=ml_monoLambda</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_38">
+            <property name="geometry">
+                <rect>
+                    <x>350</x>
+                    <y>0</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-softGlue</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>softGlueMenu;softGlue2 Menu;shift 1;shift 2;SoftGlue Circuits</string>
+            </property>
+            <property name="files">
+                <string>softGlueMenu.adl;softGlueMenu.adl;softGlue_Shift32_bare.adl;softGlue_Shift32_bare.adl;configMenu.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,H=softGlue:;P=raspi:,H=softGlue2:;P=raspi:,H=softGlue:,N=1;P=raspi:,H=softGlue:,N=2;P=raspi:,CONFIG=SG</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_39">
+            <property name="geometry">
+                <rect>
+                    <x>350</x>
+                    <y>40</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-FuncGen</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>funcGen</string>
+            </property>
+            <property name="files">
+                <string>FuncGen.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Q=fgen</string>
+            </property>
+            <property name="removeParent">
+                <string>false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_40">
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>80</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-ADC</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>ADC 1;ADC 1 sweep;ADC 2 sweep;ADC 3 sweep;ADC 4 sweep;Slow feedback;Fast feedback;Async Slow feedback</string>
+            </property>
+            <property name="files">
+                <string>Ip330Scan.adl;mca_small.adl;mca_small.adl;mca_small.adl;mca_small.adl;pid_control.adl;pid_control.adl;async_pid_control.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,R=IP330_;P=raspi:,M=mip330_1;P=raspi:,M=mip330_2;P=raspi:,M=mip330_3;P=raspi:,M=mip330_4;P=raspi:,PID=pid_slow,TITLE=Slow_Feedback;P=raspi:,PID=ip330PIDFast,TITLE=Fast_Feedback;P=raspi:,PID=async_pid_slow,TITLE=Slow_Feedback</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_41">
+            <property name="geometry">
+                <rect>
+                    <x>350</x>
+                    <y>60</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-octupole</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>OctupoleRamp;temp</string>
+            </property>
+            <property name="files">
+                <string>OctupoleRamp.adl;octupoleTempRead.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Q=octupole:;P=raspi:,Q=Oct:</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_42">
+            <property name="geometry">
+                <rect>
+                    <x>280</x>
+                    <y>140</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-trajectory</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>standard trajectoryScan;trajectoryScan1;trajectoryScan2;trajectoryScan1 (2 mot);MM4000 XPS trajectory</string>
+            </property>
+            <property name="files">
+                <string>trajectoryScan.adl;MAX_trajectoryScan.adl;MAX_trajectoryScan.adl;MAX_trajectoryScan2.adl;trajectoryScan.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,R=traj1:,TITLE=traj1,M1=m1,M2=m2,M3=m3,M4=m4,M5=m5,M6=m6,M7=m7,M8=m8;P=raspi:,R=traj1:,TITLE=traj1,M1=m1,M2=m2,M3=m3,M4=m4,M5=m5,M6=m6,M7=m7,M8=m8;P=raspi:,R=traj2:,TITLE=traj2,M1=m9,M2=m10,M3=m11,M4=m12,M5=m13,M6=m14,M7=m15,M8=m16;P=raspi:,R=traj1:,TITLE=traj1,M1=m1,M2=m2,M3=m3,M4=m4,M5=m5,M6=m6,M7=m7,M8=m8;P=raspi:,R=traj1:,TITLE=traj1,M1=m1,M2=m2,M3=m3,M4=m4,M5=m5,M6=m6,M7=m7,M8=m8</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_43">
+            <property name="geometry">
+                <rect>
+                    <x>350</x>
+                    <y>140</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>40</red>
+                    <green>147</green>
+                    <blue>21</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-AD simDet</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Simulator #1 General;Simulator #1 Specific;Simulator #2 General;Simulator #2 Specific</string>
+            </property>
+            <property name="files">
+                <string>ADBase.adl;simDetector.adl;ADBase.adl;simDetector.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:, R=SIM1:cam1:;P=raspi:, R=SIM1:cam1:;P=raspi:, R=SIM1:cam2:;P=raspi:, R=SIM1:cam2:</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_44">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>160</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-countDown</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>count down timer</string>
+            </property>
+            <property name="files">
+                <string>countDownTimer.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,N=1</string>
+            </property>
+            <property name="removeParent">
+                <string>false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_45">
+            <property name="geometry">
+                <rect>
+                    <x>70</x>
+                    <y>160</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-alarmClock</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>alarm clock</string>
+            </property>
+            <property name="files">
+                <string>alarmClock.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,A=1</string>
+            </property>
+            <property name="removeParent">
+                <string>false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_46">
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>160</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-timer</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>timer</string>
+            </property>
+            <property name="files">
+                <string>timer.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,N=1</string>
+            </property>
+            <property name="removeParent">
+                <string>false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_47">
+            <property name="geometry">
+                <rect>
+                    <x>210</x>
+                    <y>160</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-shutterDo</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>shutterDo;shutterSim</string>
+            </property>
+            <property name="files">
+                <string>shutterDo.adl;shutterSim.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Q=s2:,SHUTTER_STATUS=raspi:sim2:B_SHTRS_CLOSED,OPEN_PV=raspi:sim2:open,CLOSE_PV=raspi:sim2:close;P=raspi:,Q=sim2:,SHUTTER_STATUS=raspi:sim2:B_SHTRS_CLOSED,OPEN_PV=raspi:sim2:openCmd,CLOSE_PV=raspi:sim2:closeCmd</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_48">
+            <property name="geometry">
+                <rect>
+                    <x>280</x>
+                    <y>160</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-test</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>CR74x;fieldVector;selector;beamEnergy;muir;tomography fly;hexFly;rock;Ensemble PSO Fly;calcTest;interlaceFly;compressGain;tablePSOFly;Security Control;waveformTypes menu</string>
+            </property>
+            <property name="files">
+                <string>CR74x.adl;fieldVector.adl;selector.adl;beamEnergy.adl;yySseq.adl;tomoFly.adl;hexFly.adl;rock.adl;EnsemblePSOFly.adl;calcTest.adl;interlaceFly.adl;compress.adl;tablePSOFly.adl;Security_Control.adl;configMenu.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Q=test:;P=4idc2:,Q=8p:;P=raspi:,R=obj;P=raspi:;P=raspi:,S=PresetHistoryAdd;P=raspi:,Q=tomoFly:;P=raspi:,Q=hexFly:;P=raspi:,Q=rock:;P=raspi:,Q=PSOFly:;P=raspi:;P=raspi:,Q=iFly:,QT=tableFly:;P=raspi:,Q=gain;P=raspi:,Q=tableFly:;P=raspi:;P=raspi:,CONFIG=waveformTypes</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_49">
+            <property name="geometry">
+                <rect>
+                    <x>350</x>
+                    <y>160</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-MLL</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>MLLH;MLLH hard motors;MLLV;MLLV hard motors</string>
+            </property>
+            <property name="files">
+                <string>MLLH.adl;motor3x.adl;MLLV.adl;motor5x.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:,Q=MLLH:;P=raspi:,M1=m2,M2=m1,M3=m3;P=raspi:,Q=MLLV:;P=raspi:,M1=m4,M2=m5,M3=m6,M4=m7,M5=m8</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_50">
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>20</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-userCalc</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>user calcs 1-10;user stringCalcs 1-10;user transforms 1-10;user string seqs 1-10;user arrayCalcs 1-10;user average 1-10;user calcOuts;user stringCalcs 11-20;user transforms 11-20;user string seqs 11-20;user arrayCalcs 11-20;user average 11-20;user calcOuts 11-20;busyRecord;busyRecord2;editSseq</string>
+            </property>
+            <property name="files">
+                <string>userCalcs10.adl;userStringCalcs10.adl;userTransforms10.adl;userStringSeqs10.adl;userArrayCalcs10.adl;userAve10.adl;userCalcOuts10.adl;userStringCalcs10more.adl;userTransforms10more.adl;userStringSeqs10more.adl;userArrayCalcs10more.adl;userAve10more.adl;userCalcOuts10more.adl;xxBusyRecord.adl;xxBusyRecord.adl;editSseq.adl</string>
+            </property>
+            <property name="args">
+                <string>P=raspi:;P=raspi:;P=raspi:;P=raspi:;P=raspi:;P=raspi:;P=raspi:;P=raspi:,N1=11,N2=12,N3=13,N4=14,N5=15,N6=16,N7=17,N8=18,N9=19,N10=20;P=raspi:,N1=11,N2=12,N3=13,N4=14,N5=15,N6=16,N7=17,N8=18,N9=19,N10=20;P=raspi:,N1=11,N2=12,N3=13,N4=14,N5=15,N6=16,N7=17,N8=18,N9=19,N10=20;P=raspi:,N1=11,N2=12,N3=13,N4=14,N5=15,N6=16,N7=17,N8=18,N9=19,N10=20;P=raspi:,N1=11,N2=12,N3=13,N4=14,N5=15,N6=16,N7=17,N8=18,N9=19,N10=20;P=raspi:,N1=11,N2=12,N3=13,N4=14,N5=15,N6=16,N7=17,N8=18,N9=19,N10=20;P=raspi:,R=mybusy;P=raspi:,R=mybusy2;P=raspi:,Q=ES:</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <zorder>caLabel_0</zorder>
+        <zorder>caLabel_1</zorder>
+        <zorder>caLabel_2</zorder>
+        <zorder>caFrame_0</zorder>
+        <zorder>caRelatedDisplay_0</zorder>
+        <zorder>caRelatedDisplay_1</zorder>
+        <zorder>caRelatedDisplay_2</zorder>
+        <zorder>caRelatedDisplay_3</zorder>
+        <zorder>caRelatedDisplay_4</zorder>
+        <zorder>caRelatedDisplay_5</zorder>
+        <zorder>caRelatedDisplay_6</zorder>
+        <zorder>caRelatedDisplay_7</zorder>
+        <zorder>caRelatedDisplay_8</zorder>
+        <zorder>caRelatedDisplay_9</zorder>
+        <zorder>caRelatedDisplay_10</zorder>
+        <zorder>caRelatedDisplay_11</zorder>
+        <zorder>caRelatedDisplay_12</zorder>
+        <zorder>caRelatedDisplay_13</zorder>
+        <zorder>caRelatedDisplay_14</zorder>
+        <zorder>caRelatedDisplay_15</zorder>
+        <zorder>caRelatedDisplay_16</zorder>
+        <zorder>caRelatedDisplay_17</zorder>
+        <zorder>caRelatedDisplay_18</zorder>
+        <zorder>caRelatedDisplay_19</zorder>
+        <zorder>caRelatedDisplay_20</zorder>
+        <zorder>caMessageButton_0</zorder>
+        <zorder>caRelatedDisplay_21</zorder>
+        <zorder>caRelatedDisplay_22</zorder>
+        <zorder>caRelatedDisplay_23</zorder>
+        <zorder>caRelatedDisplay_24</zorder>
+        <zorder>caRelatedDisplay_25</zorder>
+        <zorder>caRelatedDisplay_26</zorder>
+        <zorder>caRelatedDisplay_27</zorder>
+        <zorder>caRelatedDisplay_28</zorder>
+        <zorder>caRelatedDisplay_29</zorder>
+        <zorder>caRelatedDisplay_30</zorder>
+        <zorder>caRelatedDisplay_31</zorder>
+        <zorder>caRelatedDisplay_32</zorder>
+        <zorder>caRelatedDisplay_33</zorder>
+        <zorder>caRelatedDisplay_34</zorder>
+        <zorder>caRelatedDisplay_35</zorder>
+        <zorder>caRelatedDisplay_36</zorder>
+        <zorder>caRelatedDisplay_37</zorder>
+        <zorder>caRelatedDisplay_38</zorder>
+        <zorder>caRelatedDisplay_39</zorder>
+        <zorder>caRelatedDisplay_40</zorder>
+        <zorder>caRelatedDisplay_41</zorder>
+        <zorder>caRelatedDisplay_42</zorder>
+        <zorder>caRelatedDisplay_43</zorder>
+        <zorder>caRelatedDisplay_44</zorder>
+        <zorder>caRelatedDisplay_45</zorder>
+        <zorder>caRelatedDisplay_46</zorder>
+        <zorder>caRelatedDisplay_47</zorder>
+        <zorder>caRelatedDisplay_48</zorder>
+        <zorder>caRelatedDisplay_49</zorder>
+        <zorder>caRelatedDisplay_50</zorder>
+    </widget>
+</widget>
+</ui>

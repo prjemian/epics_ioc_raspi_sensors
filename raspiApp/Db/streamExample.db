@@ -1,0 +1,176 @@
+# process this record to reload all stream protocols
+record (sub, "$(P)reload")
+{
+    field (SNAM, "streamReload")
+}
+
+# some scaling -10...10V <-> 0x0000...0xffff and back
+record (ao, "$(P)ao")
+{
+    field (DESC, "An analog value")
+    field (DTYP, "stream")
+    field (OUT,  "@example.proto set-ao $(PORT)")
+    field (PREC, "3")
+    field (LINR, "LINEAR")
+    field (ESLO, "0.000305180437934") # 20.0 / 0xffff 
+    field (EOFF, "-10")
+    field (DRVL, "-10")
+    field (DRVH, "10")
+    field (EGU,  "V")
+}
+
+record (ai, "$(P)ai")
+{
+    field (DESC, "An analog value")
+    field (DTYP, "stream")
+    field (INP,  "@example.proto ai $(PORT)")
+    field (PREC, "3")
+    field (LINR, "LINEAR")
+    field (ESLO, "0.000305180437934") # 20.0 / 0xffff 
+    field (EOFF, "-10")
+    field (EGU,  "V")
+}
+
+# simple integer and binary i/o
+record (longout, "$(P)lo")
+{
+    field (DESC, "An integer value")
+    field (DTYP, "stream")
+    field (OUT,  "@example.proto lo $(PORT)")
+}
+
+record (longin, "$(P)li")
+{
+    field (DESC, "An integer value")
+    field (DTYP, "stream")
+    field (INP,  "@example.proto li $(PORT)")
+}
+
+record (bo, "$(P)bo")
+{
+    field (DESC, "A bit value")
+    field (DTYP, "stream")
+    field (OUT,  "@example.proto bo $(PORT)")
+    field (MASK, "42")
+    field (ZNAM, "OFF")
+    field (ONAM, "ON")
+}
+
+record (bi, "$(P)bi")
+{
+    field (DESC, "A bit value")
+    field (DTYP, "stream")
+    field (INP,  "@example.proto bi $(PORT)")
+    field (ZNAM, "OFF")
+    field (ONAM, "ON")
+}
+
+# playing with enums
+record (mbbo, "$(P)mbbo")
+{
+    field (DESC, "Print Enums")
+    field (DTYP, "stream")
+    field (OUT,  "@example.proto enums $(PORT)")
+    field (ZRST, "A")
+    field (ZRVL, "2")
+    field (ONST, "B")
+    field (ONVL, "3")
+    field (TWST, "C")
+    field (TWVL, "1")
+    field (THST, "D")
+    field (THVL, "0")
+}
+
+record (stringout, "$(P)command")
+{
+    field (DTYP, "stream")
+    field (OUT,  "@example.proto COMMAND $(PORT)")
+}
+
+record (stringin, "$(P)info")
+{
+    field (DTYP, "stream")
+    field (INP,  "@example.proto info $(PORT)")
+}
+
+# prints all available checksums
+record (stringout, "$(P)checksum")
+{
+    field (DTYP, "stream")
+    field (OUT,  "@example.proto checksum $(PORT)")
+}
+
+# this record gets any (terminated) input line
+record (stringin, "$(P)spy")
+{
+    field (DTYP, "stream")
+    field (INP,  "@example.proto spy $(PORT)")
+    field (SCAN, "I/O Intr")
+    field (FLNK, "$(P)log5")
+}
+
+# these records log the last few input lines
+record (stringin, "$(P)log5")
+{
+    field (INP,  "$(P)log4")
+    field (FLNK, "$(P)log4")
+}
+
+record (stringin, "$(P)log4")
+{
+    field (INP,  "$(P)log3")
+    field (FLNK, "$(P)log3")
+}
+
+record (stringin, "$(P)log3")
+{
+    field (INP,  "$(P)log2")
+    field (FLNK, "$(P)log2")
+}
+
+record (stringin, "$(P)log2")
+{
+    field (INP,  "$(P)log1")
+    field (FLNK, "$(P)log1")
+}
+
+record (stringin, "$(P)log1")
+{
+    field (INP,  "$(P)spy")
+}
+
+# caput to A,B,C or PROC to process this
+record (calcout, "$(P)calcout")
+{
+    field (DTYP, "stream")
+    field (OUT,  "@example.proto calcout $(PORT)")
+    field (A,    "3.1415")
+    field (B,    "15")
+    field (C,    "8")
+    field (CALC, "0") # should be a valid expression
+    field (DESC, "filename")
+}
+
+# read a long string as a waveform of characteres
+record (waveform, "$(P)hugestring")
+{
+    field (DTYP, "stream")
+    field (INP,  "@example.proto char_wave_in $(PORT)")
+    field (FTVL, "CHAR")
+    field (NELM, "1000")
+}
+
+# write an array of strings
+record (waveform, "$(P)strings")
+{
+    field (DTYP, "stream")
+    field (INP,  "@example.proto string_wave_out $(PORT)")
+    field (FTVL, "STRING")
+    field (NELM, "10")
+}
+
+record (scalcout, "$(P)scalcout")
+{
+    field (DTYP, "stream")
+    field (OUT,  "@example.proto scalcout $(PORT)")
+}

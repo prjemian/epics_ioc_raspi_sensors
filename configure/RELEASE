@@ -1,0 +1,40 @@
+#FILENAME:      RELEASE
+#USAGE:         Specify directory paths to synApps support modules
+#Version:       $Revision$
+#Modified By:   $Author$
+#Last Modified: $Date$
+#HeadURL:       $URL$
+
+#RELEASE Location of external products
+#
+# IF YOU MAKE ANY CHANGES to this file you MUST at least run
+# "gnumake" in this directory afterwards; you usually need
+# to run "gnumake rebuild" in the application's top level
+# directory each time this file is changed.
+#
+# NOTE: The build does not check dependencies against files
+# that are outside this application, thus you should run
+# "gnumake distclean install" in the top directory each time
+# EPICS_BASE, SNCSEQ, or any other external module defined
+# in the RELEASE file is rebuilt.
+#
+# Host/target specific settings can be specified in files named
+#  RELEASE.$(EPICS_HOST_ARCH).Common
+#  RELEASE.Common.$(T_A)
+#  RELEASE.$(EPICS_HOST_ARCH).$(T_A)
+
+##############################################################################
+
+# Define the path to the synApps support directory and uncomment.
+SUPPORT=/usr/local/epics/synApps/support
+
+# Specify the standard synApps configuration.
+include $(SUPPORT)/configure/RELEASE
+#CAPUTLOG=$(SUPPORT)/caPutLog-3-4
+
+# For a local, custom configuration; copy $(SUPPORT)/configure/RELEASE
+# to this directory as the file MASTER_RELEASE, edit the file, comment out
+# the above include, and uncomment the following line.
+#include $(TOP)/configure/MASTER_RELEASE
+
+TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top

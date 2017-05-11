@@ -1,0 +1,15 @@
+file "$(OPTICS)/opticsApp/Db/orient_xtals.db"
+{
+pattern
+{P, O, PREC, N, xtal, a, b, c, alpha, beta, gamma}
+{raspi:, 1, 4, 1, Silicon, 5.431, 5.431, 5.431, 90, 90, 90}
+{raspi:, 1, 4, 2, "Beryllium hcp", 2.2858, 2.2858, 3.5843, 90, 90, 120}
+{raspi:, 1, 4, 3, VO2, 5.743, 4.517, 5.375, 90, 122.6, 90}
+{raspi:, 1, 4, 4, undefined, 1, 1, 1, 90, 90, 90}
+{raspi:, 1, 4, 5, undefined, 1, 1, 1, 90, 90, 90}
+{raspi:, 1, 4, 6, undefined, 1, 1, 1, 90, 90, 90}
+{raspi:, 1, 4, 7, undefined, 1, 1, 1, 90, 90, 90}
+{raspi:, 1, 4, 8, undefined, 1, 1, 1, 90, 90, 90}
+{raspi:, 1, 4, 9, undefined, 1, 1, 1, 90, 90, 90}
+{raspi:, 1, 4, 10, undefined, 1, 1, 1, 90, 90, 90}
+}

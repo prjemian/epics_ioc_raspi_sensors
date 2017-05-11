@@ -1,0 +1,118 @@
+#!/bin/csh -f
+
+# caller (typically: start_epics) MUST make these definitions
+# setenv EPICS_APP /home/oxygen/MOONEY/epics/synApps_5_5/support/raspi
+# setenv EPICS_APP_ADL_DIR ${EPICS_APP}/raspiApp/op/adl
+
+set output = `perl $EPICS_APP/release.pl $EPICS_APP`
+$output
+
+#######################################
+# Prepare MEDM path
+# EDP is temporary EPICS_DISPLAY_PATH
+#
+setenv EDP  .
+if ( ${?EPICS_APP_ADL_DIR} ) then
+	setenv EDP ${EDP}:${EPICS_APP_ADL_DIR}
+endif
+if ( ${?ALIVE} ) then
+	setenv EDP ${EDP}:${ALIVE}/aliveApp/op/adl
+endif
+if ( ${?AREA_DETECTOR} ) then
+	setenv EDP ${EDP}:${AREA_DETECTOR}/ADApp/op/adl
+endif
+if ( ${?ADCORE} ) then
+	setenv EDP ${EDP}:${ADCORE}/ADApp/op/adl
+endif
+if ( ${?ASYN} ) then
+	setenv EDP ${EDP}:${ASYN}/opi/medm
+endif
+if ( ${?AUTOSAVE} ) then
+	setenv EDP ${EDP}:${AUTOSAVE}/asApp/op/adl
+endif
+if ( ${?BUSY} ) then
+	setenv EDP ${EDP}:${BUSY}/busyApp/op/adl
+endif
+if ( ${?CALC} ) then
+	setenv EDP ${EDP}:${CALC}/calcApp/op/adl
+endif
+if ( ${?CAMAC} ) then
+	setenv EDP ${EDP}:${CAMAC}/camacApp/op/adl
+endif
+if ( ${?CAPUTRECORDER} ) then
+	setenv EDP ${EDP}:${CAPUTRECORDER}/caputRecorderApp/op/adl
+endif
+if ( ${?DAC128V} ) then
+	setenv EDP ${EDP}:${DAC128V}/dac128VApp/op/adl
+endif
+if ( ${?DELAYGEN} ) then
+	setenv EDP ${EDP}:${DELAYGEN}/delaygenApp/op/adl
+endif
+if ( ${?DEVIOCSTATS} ) then
+	setenv EDP ${EDP}:${DEVIOCSTATS}/op/adl
+endif
+if ( ${?DXP} ) then
+	setenv EDP ${EDP}:${DXP}/dxpApp/op/adl
+endif
+if ( ${?IP} ) then
+	setenv EDP ${EDP}:${IP}/ipApp/op/adl
+endif
+if ( ${?IP330} ) then
+	setenv EDP ${EDP}:${IP330}/ip330App/op/adl
+endif
+if ( ${?IPUNIDIG} ) then
+	setenv EDP ${EDP}:${IPUNIDIG}/ipUnidigApp/op/adl
+endif
+if ( ${?LOVE} ) then
+	setenv EDP ${EDP}:${LOVE}/loveApp/op/adl
+endif
+if ( ${?MCA} ) then
+	setenv EDP ${EDP}:${MCA}/mcaApp/op/adl
+endif
+if ( ${?MEASCOMP} ) then
+	setenv EDP ${EDP}:${MEASCOMP}/measCompApp/op/adl
+endif
+if ( ${?MODBUS} ) then
+	setenv EDP ${EDP}:${MODBUS}/modbusApp/op/adl
+endif
+if ( ${?MOTOR} ) then
+	setenv EDP ${EDP}:${MOTOR}/motorApp/op/adl
+endif
+if ( ${?OPTICS} ) then
+	setenv EDP ${EDP}:${OPTICS}/opticsApp/op/adl
+endif
+if ( ${?QUADEM} ) then
+	setenv EDP ${EDP}:${QUADEM}/quadEMApp/op/adl
+endif
+if ( ${?SOFTGLUE} ) then
+	setenv EDP ${EDP}:${SOFTGLUE}/softGlueApp/op/adl
+endif
+if ( ${?SSCAN} ) then
+	setenv EDP ${EDP}:${SSCAN}/sscanApp/op/adl
+endif
+if ( ${?STD} ) then
+	setenv EDP ${EDP}:${STD}/stdApp/op/adl
+endif
+if ( ${?VAC} ) then
+	setenv EDP ${EDP}:${VAC}/vacApp/op/adl
+endif
+if ( ${?VME} ) then
+	setenv EDP ${EDP}:${VME}/vmeApp/op/adl
+endif
+
+# APS accelerator-controls displays
+setenv EDP ${EDP}:/APSshare/adlsys/sr/id
+
+if (! ${?EPICS_DISPLAY_PATH}) then
+setenv EPICS_DISPLAY_PATH ${EDP}
+else
+setenv EPICS_DISPLAY_PATH ${EDP}:${EPICS_DISPLAY_PATH}
+endif
+
+if (! ${?MEDM_EXEC_LIST}) setenv MEDM_EXEC_LIST 'Probe;probe &P &'
+
+#setenv EPICS_CA_ADDR_LIST "164.54.53.126"
+
+# This should agree with the environment variable set by the ioc
+# see 'putenv "EPICS_CA_MAX_ARRAY_BYTES=64008"' in iocBoot/ioc<target>/st.cmd
+setenv EPICS_CA_MAX_ARRAY_BYTES 64008

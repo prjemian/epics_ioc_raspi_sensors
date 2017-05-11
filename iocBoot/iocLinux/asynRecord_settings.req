@@ -1,0 +1,14 @@
+$(P)$(R).SCAN
+$(P)$(R).TMOD
+$(P)$(R).OEOS
+$(P)$(R).IEOS
+$(P)$(R).OFMT
+$(P)$(R).IFMT
+$(P)$(R).TMOT
+$(P)$(R).NRRD
+$(P)$(R).BAUD
+$(P)$(R).DBIT
+$(P)$(R).SBIT
+$(P)$(R).PRTY
+$(P)$(R).MCTL
+$(P)$(R).FCTL

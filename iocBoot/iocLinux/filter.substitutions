@@ -1,0 +1,26 @@
+# filter.substitutions
+
+file "$(OPTICS)/opticsApp/Db/filterBladeNoSensor.db" {
+  pattern
+  {P,      R,        N,   DESC,           OUT                  OUT_STRING,  IN_STRING}
+  {raspi:,   filter:,  1,   "Filter 1",     "raspi:userTran1.A",   "Out",       "In"}
+  {raspi:,   filter:,  2,   "Filter 2",     "raspi:userTran1.B",   "Out",       "In"}
+  {raspi:,   filter:,  3,   "Filter 3",     "raspi:userTran1.C",   "Out",       "In"}
+  {raspi:,   filter:,  4,   "Filter 4",     "raspi:userTran1.D",   "Out",       "In"}
+  {raspi:,   filter:,  5,   "Filter 5",     "raspi:userTran1.E",   "Out",       "In"}
+  {raspi:,   filter:,  6,   "Filter 6",     "raspi:userTran1.F",   "Out",       "In"}
+  {raspi:,   filter:,  7,   "Filter 7",     "raspi:userTran1.G",   "Out",       "In"}
+  {raspi:,   filter:,  8,   "Filter 8",     "raspi:userTran1.H",   "Out",       "In"}
+  {raspi:,   filter:,  9,   "Filter 9",     "raspi:userTran1.I",   "Out",       "In"}
+  {raspi:,   filter:,  10,  "Filter 10",    "raspi:userTran1.J",   "Out",       "In"}
+  {raspi:,   filter:,  11,  "Filter 11",    "raspi:userTran1.K",   "Out",       "In"}
+  {raspi:,   filter:,  12,  "Filter 12",    "raspi:userTran1.L",   "Out",       "In"}
+  {raspi:,   filter:,  13,  "Filter 13",    "raspi:userTran1.M",   "Out",       "In"}
+  {raspi:,   filter:,  14,  "Filter 14",    "raspi:userTran1.N",   "Out",       "In"}
+  {raspi:,   filter:,  15,  "Filter 15",    "raspi:userTran1.O",   "Out",       "In"}
+  {raspi:,   filter:,  16,  "Filter 16",    "raspi:userTran1.P",   "Out",       "In"}
+}
+
+file "$(OPTICS)/opticsApp/Db/filterDrive.db" {
+  {P="raspi:", R="filter:", DESC="Filters", KEV="raspi:userCalc1.A"}
+}

@@ -1,0 +1,5 @@
+Assuming the EPICS_HOST_ARCH environment variable is set correctly,
+start the ioc from this directory by executing the following command.
+
+../../bin/${EPICS_HOST_ARCH}/raspi st.cmd
+

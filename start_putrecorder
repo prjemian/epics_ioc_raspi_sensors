@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# start, or restart, caputRecorder.py
+
+PREFIX=$1
+
+EPICS_APP=/usr/local/epics/ioc/raspi
+MACROS_PY_DIR=${EPICS_APP}/raspiApp/op/python
+
+output=`perl -s ${EPICS_APP}/release.pl -form=bash ${EPICS_APP}`
+eval $output
+
+#echo "CAPUTRECORDER=", $CAPUTRECORDER
+CAPUTRECORDER_PY=${CAPUTRECORDER}/caputRecorderApp/op/python/caputRecorder.py
+
+arch=`uname -p`
+COMMAND="/APSshare/anaconda/${arch}/bin/python ${CAPUTRECORDER_PY}"
+#COMMAND="/APSshare/epd/rh6-x86_64/bin/python ${CAPUTRECORDER_PY}"
+
+export PYTHONPATH=${MACROS_PY_DIR}:$PYTHONPATH
+namePrefix=$( echo $PREFIX | sed s/://g )
+MACROS_PY=${MACROS_PY_DIR}/"macros_"${namePrefix}.py
+
+# start caputRecorder.py
+$COMMAND ${PREFIX} ${MACROS_PY}&
+
+# start caputRecorder.py with more prefixes
+#$COMMAND ${PREFIX} yyy: zzz: ${MACROS_PY}&

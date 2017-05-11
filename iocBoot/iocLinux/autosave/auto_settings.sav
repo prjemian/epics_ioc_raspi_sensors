@@ -1,0 +1,8 @@
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 170510-215539
+raspi:userCalcEnable 0
+raspi:userCalcOutEnable 0
+raspi:userStringCalcEnable 0
+raspi:userArrayCalcEnable 0
+raspi:userTranEnable 1
+raspi:userStringSeqEnable 0
+<END>

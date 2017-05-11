@@ -1,0 +1,21 @@
+file "$(MOTOR)/db/asyn_motor.db"
+{
+pattern
+{P,     N,  M,      DTYP,            PORT, ADDR,  DESC,          EGU,      DIR,  VELO,  VBAS,  ACCL,  BDST,  BVEL,  BACC,  MRES,  PREC,  DHLM,  DLLM,  INIT}
+{raspi:,  1,  "m$(N)",  "asynMotor",  motorSim1,  0,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  2,  "m$(N)",  "asynMotor",  motorSim1,  1,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  3,  "m$(N)",  "asynMotor",  motorSim1,  2,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  4,  "m$(N)",  "asynMotor",  motorSim1,  3,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  5,  "m$(N)",  "asynMotor",  motorSim1,  4,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  6,  "m$(N)",  "asynMotor",  motorSim1,  5,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  7,  "m$(N)",  "asynMotor",  motorSim1,  6,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  8,  "m$(N)",  "asynMotor",  motorSim1,  7,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  9,  "m$(N)",  "asynMotor",  motorSim1,  8,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  10,  "m$(N)",  "asynMotor",  motorSim1,  9,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  11,  "m$(N)",  "asynMotor",  motorSim1,  10,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  12,  "m$(N)",  "asynMotor",  motorSim1,  11,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  13,  "m$(N)",  "asynMotor",  motorSim1,  12,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  14,  "m$(N)",  "asynMotor",  motorSim1,  13,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  15,  "m$(N)",  "asynMotor",  motorSim1,  14,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+{raspi:,  16,  "m$(N)",  "asynMotor",  motorSim1,  15,  "motor $(N)",  degrees,  Pos,  1,     .1,    .2,    0,     1,     .2,    0.01,  5,     100,   -100,  ""}
+}

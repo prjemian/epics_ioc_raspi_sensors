@@ -1,0 +1,6 @@
+$(P)userCalcEnable
+$(P)userCalcOutEnable
+$(P)userStringCalcEnable
+$(P)userArrayCalcEnable
+$(P)userTranEnable
+$(P)userStringSeqEnable

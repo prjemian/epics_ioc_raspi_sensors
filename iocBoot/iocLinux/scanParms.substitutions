@@ -1,0 +1,37 @@
+file "$(SSCAN)/sscanApp/Db/scanParms.db"
+{
+{P=raspi:,SCANREC=raspi:scan1,Q=m1,POS="$(Q).VAL",RDBK="$(Q).RBV"}
+{P=raspi:,SCANREC=raspi:scan1,Q=m2,POS="$(Q).VAL",RDBK="$(Q).RBV"}
+{P=raspi:,SCANREC=raspi:scan1,Q=m3,POS="$(Q).VAL",RDBK="$(Q).RBV"}
+{P=raspi:,SCANREC=raspi:scan1,Q=m4,POS="$(Q).VAL",RDBK="$(Q).RBV"}
+{P=raspi:,SCANREC=raspi:scan1,Q=m5,POS="$(Q).VAL",RDBK="$(Q).RBV"}
+{P=raspi:,SCANREC=raspi:scan1,Q=m6,POS="$(Q).VAL",RDBK="$(Q).RBV"}
+{P=raspi:,SCANREC=raspi:scan1,Q=m7,POS="$(Q).VAL",RDBK="$(Q).RBV"}
+{P=raspi:,SCANREC=raspi:scan1,Q=m8,POS="$(Q).VAL",RDBK="$(Q).RBV"}
+
+#{P=raspi:,SCANREC=raspi:scan1,Q=Table1X,POS=table1.X,RDBK=table1.XRB}
+#{P=raspi:,SCANREC=raspi:scan1,Q=Table1Y,POS=table1.Y,RDBK=table1.YRB}
+#{P=raspi:,SCANREC=raspi:scan1,Q=Table1Z,POS=table1.Z,RDBK=table1.ZRB}
+#{P=raspi:,SCANREC=raspi:scan1,Q=Table1AX,POS=table1.AX,RDBK=table1.AXRB}
+#{P=raspi:,SCANREC=raspi:scan1,Q=Table1AY,POS=table1.AY,RDBK=table1.AYRB}
+#{P=raspi:,SCANREC=raspi:scan1,Q=Table1AZ,POS=table1.AZ,RDBK=table1.AZRB}
+
+#{P=raspi:,SCANREC=raspi:scan1,Q=BraggE,POS=BraggEAO.VAL,RDBK=BraggERdbkAO.VAL}
+#{P=raspi:,SCANREC=raspi:scan1,Q=BraggLambda,POS=BraggLambdaAO.VAL,RDBK=BraggLambdaRdbkAO.VAL}
+#{P=raspi:,SCANREC=raspi:scan1,Q=BraggTheta,POS=BraggThetaAO.VAL,RDBK=BraggThetaRdbkAO.VAL}
+
+#{P=raspi:,SCANREC=raspi:scan1,Q=HR1_E,POS=HR1_EAO.VAL,RDBK=HR1_ERdbkAO}
+#{P=raspi:,SCANREC=raspi:scan1,Q=HR1_A,POS=HR1_worldOffAO.VAL,RDBK=HR1_worldOffAO.VAL}
+
+# slit
+#{P=raspi:,SCANREC=raspi:scan1,Q=Slit1Hp,POS=Slit1Hxp.VAL,RDBK=Slit1Ht2.A}
+#{P=raspi:,SCANREC=raspi:scan1,Q=Slit1Hn,POS=Slit1Hxn.VAL,RDBK=Slit1Ht2.B}
+#{P=raspi:,SCANREC=raspi:scan1,Q=Slit1Hsize,POS=Slit1Hsize.VAL,RDBK=Slit1Ht2.C}
+#{P=raspi:,SCANREC=raspi:scan1,Q=Slit1Hcenter,POS=Slit1Hcenter.VAL,RDBK=Slit1Ht2.D}
+#{P=raspi:,SCANREC=raspi:scan1,Q=Slit1Vp,POS=Slit1Vxp.VAL,RDBK=Slit1Vt2.A}
+#{P=raspi:,SCANREC=raspi:scan1,Q=Slit1Vn,POS=Slit1Vxn.VAL,RDBK=Slit1Vt2.B}
+#{P=raspi:,SCANREC=raspi:scan1,Q=Slit1Vsize,POS=Slit1Vsize.VAL,RDBK=Slit1Vt2.C}
+#{P=raspi:,SCANREC=raspi:scan1,Q=Slit1Vcenter,POS=Slit1Vcenter.VAL,RDBK=Slit1Vt2.D}
+
+
+}

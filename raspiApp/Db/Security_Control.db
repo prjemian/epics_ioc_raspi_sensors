@@ -1,0 +1,26 @@
+grecord(bo,"$(P)RemoteAccess") {
+	field(DESC,"AS for Remote Hosts")
+	field(DTYP,"Soft Channel")
+	field(ZNAM,"Disabled")
+	field(ONAM,"Enabled")
+	field(ASG, "controlFields")
+	field(PINI, "YES")
+}
+grecord(bo,"$(P)LocalAccess") {
+	field(DESC,"AS for Local PCs")
+	field(DTYP,"Soft Channel")
+	field(ZNAM,"Disabled")
+	field(ONAM,"Enabled")
+	field(ASG, "controlFields")
+	# test nondefault value
+	field(DOL, "1")
+	field(PINI, "YES")
+}
+grecord(bo,"$(P)AS_OnOff") {
+	field(DESC,"Access Security On/Off")
+	field(DTYP,"Soft Channel")
+	field(ZNAM,"On")
+	field(ONAM,"Off")
+	field(ASG, "controlFields")
+	field(PINI, "YES")
+}
