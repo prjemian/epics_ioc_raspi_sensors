@@ -21,8 +21,11 @@ MCP4725 | 12 Bit 2.7V-5.5V I2C DAC | planned
 HC-SR04 | ultrasonic range | planned
 
 Already, we have integrated many of these sensors on Arduino
-connected by USB to the RPi and integrated in EPICS using 
-the cmd_response protocol.  This work is to eliminate the need 
+connected by USB to the RPi and 
+[integrated in EPICS](http://prjemian.github.io/cmd_response/epics/streams.html)
+using the 
+[cmd_response](http://prjemian.github.io/cmd_response/)
+protocol.  This project is to eliminate the need 
 for the Arduino.  That can simplify deployment on the very
 small form factor Raspberry Pi Zero W, which needs only a power
 source and access to WiFi in order to become an EPICS IOC
