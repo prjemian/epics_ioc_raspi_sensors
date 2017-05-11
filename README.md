@@ -5,7 +5,7 @@ to watch various sensors using the GPIO capabilities of
 the Raspberry Pi.
 
 sensor | description | support
-- | - | -
+--- | --- | ---
 DHT11 | humidity & temperature | superceded by DHT22
 NTC100 | thermistor (temperature) | planned, use ADC over I2C
 LDR | light-dependent resistor | planned, use ADC over I2C
