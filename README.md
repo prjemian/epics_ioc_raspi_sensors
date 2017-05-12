@@ -9,16 +9,16 @@ IOC ([xxx-5-8-3 template](https://github.com/epics-modules/xxx/releases/tag/R5-8
 to watch various sensors using the GPIO capabilities of
 the Raspberry Pi.
 
-sensor | description | support
---- | --- | ---
-DHT22 | humidity & temperature | work in progress ([#1](https://github.com/prjemian/raspi_epics_sensors/issues/1))
-DHT11 | humidity & temperature | superceded by DHT22
-NTC100 | thermistor (temperature) | planned, use ADC over I2C
-LDR | light-dependent resistor | planned, use ADC over I2C
-HC-SR501 | PIR infrared proximity | planned
-ADS1115 | 4 Channel 16 Bit I2C ADC | planned
-MCP4725 | 12 Bit 2.7V-5.5V I2C DAC | planned
-HC-SR04 | ultrasonic range | planned
+sensor | description | support | comments
+--- | --- | --- | ---
+DHT22 | humidity & temperature | work in progress ([#1](https://github.com/prjemian/raspi_epics_sensors/issues/1)) |
+DHT11 | humidity & temperature | superceded by DHT22 |
+NTC100 | thermistor (temperature) | planned, use ADC over I2C |
+LDR | light-dependent resistor | planned, use ADC over I2C |
+HC-SR501 | PIR infrared proximity | planned |
+ADS1115 | 4 Channel 16 Bit I2C ADC | planned | see [data table](documentation/dac-adc-calibration.md)
+MCP4725 | 12 Bit 2.7V-5.5V I2C DAC | planned |
+HC-SR04 | ultrasonic range | planned |
 
 Already, we have integrated many of these sensors on Arduino
 connected by USB to the RPi and 
