@@ -100,10 +100,10 @@ ifdef MCA
 	raspi_Common_LIBS := mca $(raspi_Common_LIBS)
 endif
 
-ifdef IP
-	raspi_Common_DBD += ipSupport.dbd
-	raspi_Common_LIBS := ip $(raspi_Common_LIBS)
-endif
+#ifdef IP
+#	raspi_Common_DBD += ipSupport.dbd
+#	raspi_Common_LIBS := ip $(raspi_Common_LIBS)
+#endif
 
 ifdef MODBUS
 	raspi_Common_DBD += modbusSupport.dbd
@@ -111,18 +111,28 @@ ifdef MODBUS
 endif
 
 ifdef MOTOR
-	raspi_Common_DBD += motorSupport.dbd devAcsMotor.dbd devAerotech.dbd
-	raspi_Common_DBD += devAttocube.dbd devFaulhaberMotor.dbd devImsMotor.dbd
-	raspi_Common_DBD += devKohzuMotor.dbd devMclennanMotor.dbd devMicos.dbd
-	raspi_Common_DBD += devMicroMo.dbd devNewFocus.dbd devNewport.dbd
-	raspi_Common_DBD += devOriel.dbd devPC6K.dbd devPIJena.dbd devPIMotor.dbd
-	raspi_Common_DBD += devSPiiPlus.dbd devSmartMotorMotor.dbd devSoftMotor.dbd
-	raspi_Common_DBD += devThorLabs.dbd motorSimSupport.dbd
+	raspi_Common_DBD += motorSupport.dbd 
+	#raspi_Common_DBD += devAcsMotor.dbd devAerotech.dbd
+	#raspi_Common_DBD += devAttocube.dbd devFaulhaberMotor.dbd devImsMotor.dbd
+	#raspi_Common_DBD += devKohzuMotor.dbd devMclennanMotor.dbd devMicos.dbd
+	#raspi_Common_DBD += devMicroMo.dbd devNewFocus.dbd devNewport.dbd
+	#raspi_Common_DBD += devOriel.dbd devPC6K.dbd devPIJena.dbd devPIMotor.dbd
+	#raspi_Common_DBD += devSPiiPlus.dbd devSmartMotorMotor.dbd 
+	#raspi_Common_DBD += devThorLabs.dbd 
+	raspi_Common_DBD += devSoftMotor.dbd
+	raspi_Common_DBD += motorSimSupport.dbd
 
 	raspi_Common_LIBS := motor $(raspi_Common_LIBS)
-	raspi_Common_LIBS := Acs acsTech80 Aerotech Attocube Faulhaber Ims KohzuMotor $(raspi_Common_LIBS)
-	raspi_Common_LIBS := Mclennan Micos MicroMo NewFocus Newport Oriel PI PIJena $(raspi_Common_LIBS)
-	raspi_Common_LIBS := Parker SmartMotor ThorLabs softMotor motorSimSupport $(raspi_Common_LIBS)
+	#raspi_Common_LIBS := Acs acsTech80 Aerotech $(raspi_Common_LIBS)
+	#raspi_Common_LIBS := Attocube Faulhaber Ims $(raspi_Common_LIBS)
+	#raspi_Common_LIBS := KohzuMotor Mclennan Micos $(raspi_Common_LIBS)
+	#raspi_Common_LIBS := MicroMo NewFocus Newport $(raspi_Common_LIBS)
+	#raspi_Common_LIBS := Oriel PI PIJena $(raspi_Common_LIBS)
+	#raspi_Common_LIBS := Parker $(raspi_Common_LIBS)
+	#raspi_Common_LIBS := SmartMotor $(raspi_Common_LIBS)
+	#raspi_Common_LIBS := ThorLabs $(raspi_Common_LIBS)
+	raspi_Common_LIBS := softMotor $(raspi_Common_LIBS)
+	raspi_Common_LIBS := motorSimSupport $(raspi_Common_LIBS)
 endif
 
 ifdef STREAM
@@ -138,10 +148,10 @@ ifdef DEVIOCSTATS
 endif
 
 
-ifdef ALIVE
-	raspi_Common_DBD += aliveSupport.dbd
-	raspi_Common_LIBS := alive $(raspi_Common_LIBS)
-endif
+#ifdef ALIVE
+#	raspi_Common_DBD += aliveSupport.dbd
+#	raspi_Common_LIBS := alive $(raspi_Common_LIBS)
+#endif
 
 raspi_Common_LIBS := $(raspi_Common_LIBS) $(EPICS_BASE_IOC_LIBS)
 
