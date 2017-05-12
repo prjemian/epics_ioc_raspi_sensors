@@ -1,5 +1,12 @@
 # dht22.db
 
+grecord(bo, "$(P)pin$(C):available")
+{
+    field (DESC, "DHT22 available")
+    field (ZNAM, "not available")
+    field (ONAM, "available")
+}
+
 grecord(longout, "$(P)pin$(C):status")
 {
     field (DESC, "DHT22 status")
