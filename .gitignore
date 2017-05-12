@@ -1,7 +1,10 @@
-O.*
+# EPICS TOP directory items
+bin/
+dbd/
+lib/
+O.*/
 makelog.txt
 dbl-all.txt
-dbd/
 
 # example application(s)
 dht22
