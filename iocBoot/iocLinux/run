@@ -10,6 +10,11 @@ if [ "" != "${IOC_PID}" ] ; then
   exit 1
 fi
 
-# start the IOC
 
-sudo ../../bin/${EPICS_HOST_ARCH}/raspi st.cmd
+export PV_PREFIX=`hostname`:
+
+# see: https://unix.stackexchange.com/questions/119269/how-to-get-ip-address-using-shell-script#119272
+export IP_ADDR=`ip addr | grep 'state UP' -A2 | tail -n1 | awk '{print $2}' | cut -f1 -d'/'`
+
+# start the IOC
+sudo -E ../../bin/${EPICS_HOST_ARCH}/raspi st.cmd

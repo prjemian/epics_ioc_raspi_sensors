@@ -1,11 +1,12 @@
 # Linux startup script
 
 # For devIocStats
-epicsEnvSet("ENGINEER","Raspberry Pi")
-epicsEnvSet("LOCATION","LAN")
-epicsEnvSet("GROUP","raspi")
+epicsEnvSet("ENGINEER", "${USER=Raspberry Pi}")
+epicsEnvSet("LOCATION", "${IP_ADDR=LAN}")
+epicsEnvSet("GROUP",    "ioc_raspi_sensors")
 
 < envPaths
+epicsEnvSet("PREFIX", "${PV_PREFIX=raspi:}")
 
 # save_restore.cmd needs the full path to the startup directory, which
 # envPaths currently does not provide
@@ -26,12 +27,12 @@ iocraspiLinux_registerRecordDeviceDriver(pdbbase)
 
 
 # Miscellaneous PV's, such as burtResult
-dbLoadRecords("$(STD)/stdApp/Db/misc.db","P=raspi:")
+dbLoadRecords("$(STD)/stdApp/Db/misc.db","P=$(PREFIX)")
 
 
 # DHT22 humidity & temperature sensor on wiringPi pin 0
-dbLoadRecords("$(TOP)/db/dht22.db", "P=raspi:,C=0")
-doAfterIocInit("seq dht22_seq, 'name=dht22_0,P=raspi:,C=0'")
+dbLoadRecords("$(TOP)/db/dht22.db", "P=$(PREFIX),C=0")
+doAfterIocInit("seq dht22_seq, 'name=dht22_0,P=$(PREFIX),C=0'")
 
 ###############################################################################
 iocInit
