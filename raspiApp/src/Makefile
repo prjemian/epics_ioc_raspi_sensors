@@ -175,10 +175,8 @@ raspi_LIBS_Linux    += $(raspi_Common_LIBS)
 
 
 raspi_SRCS += dht22.c
-raspi_LIBS += wiringPi
 raspi_SRCS += dht22_seq.st
-LIB_LIBS += wiringPi
-#USR_SYS_LIBS += /usr/lib/libwiringPi.so
+USR_SYS_LIBS += wiringPi
 
 #===========================
 
