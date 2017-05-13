@@ -40,6 +40,7 @@ fi
 
 checkpid() {
     MY_UID=`${ID} -u`
+    MY_UID=0
     # The '\$' is needed in the pgrep pattern to select raspi, but not raspi.sh
     IOC_PID=`${PGREP} ${IOC_NAME}\$ -u ${MY_UID}`
     #!echo "IOC_PID=${IOC_PID}"
@@ -68,7 +69,7 @@ start() {
 stop() {
     if checkpid; then
         ${ECHO} "Stopping ${IOC_NAME} (pid=${IOC_PID})"
-	${KILL} ${IOC_PID}
+	sudo ${KILL} ${IOC_PID}
     else
         ${ECHO} "${IOC_NAME} is not running"
     fi
