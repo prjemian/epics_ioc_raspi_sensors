@@ -51,7 +51,17 @@ ifdef SNCSEQ
 		raspi_Common_LIBS := seqDev seq pv $(raspi_Common_LIBS)
 	else
 		# seq 2.2.
+		#raspiSupport_LIBS += seq pv
+		raspi_LIBS += seq pv
 		raspi_Common_LIBS := seq pv $(raspi_Common_LIBS)
+
+		raspi_SRCS += dht22.c
+
+		raspi_SRCS += dht22_seq.st
+		raspi_DBD += dht22_seqSupport.dbd
+
+		USR_SYS_LIBS += wiringPi
+
 	endif
 endif
 
@@ -173,11 +183,6 @@ endif
 raspi_SRCS_Linux    += iocraspiLinux_registerRecordDeviceDriver.cpp     raspiMain.cpp
 raspi_LIBS_Linux    += $(raspi_Common_LIBS)
 
-DBD += raspiSupport.dbd
-
-raspi_SRCS += dht22.c
-raspi_SRCS += dht22_seq.st
-USR_SYS_LIBS += wiringPi
 
 #===========================
 
