@@ -19,6 +19,7 @@ option +r;		/* allow more than one instance of this code */
 option -w;		/* Suppress warnings */
 
 %%#include <stdio.h>
+%%#include <stdlib.h>
 %%#include <math.h>
 
 /* #include <wiringPi.h> /* see issue #11 */
@@ -26,14 +27,14 @@ option -w;		/* Suppress warnings */
 
 #include "seqPVmacros.h"
 
-/* #include "dht22.h" */
+/* #include "dht22.h"   /* see issue #11 */
 %% int read_dht22_dat(int dhtpin, float *h, float *t);
 #define READING_INVALID  -12.345e6
 #define STATUS_NO_ERROR  0
 #define STATUS_INVALID   1
 #define WIRINGPI_SETUP_FAILURE   -1
 
-#define DHTPIN {C}
+int wiringPi_pin;
 
 
 PV(int, available, "{P}pin{C}:available",   NoMon);
@@ -53,6 +54,7 @@ ss dht22_seq
         when()
         {
             SNLtaskName = macValueGet("name");
+            wiringPi_pin = atoi(macValueGet("C"));
 
             PVPUT(status, wiringPiSetup());
             PVPUT(available, !status);
@@ -66,7 +68,7 @@ ss dht22_seq
 
         when(available)
         {
-            /* PVPUT(status, read_dht22_dat(DHTPIN, &h, &t)); */
+            PVPUT(status, read_dht22_dat(wiringPi_pin, &h, &t));
             
             if (status == STATUS_NO_ERROR) {
                 PVPUT(h, h);
