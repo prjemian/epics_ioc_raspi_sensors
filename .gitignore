@@ -5,6 +5,9 @@ lib/
 O.*/
 makelog.txt
 dbl-all.txt
+cdCommands
+envPaths
+autosave/
 
 # example application(s)
 dht22
