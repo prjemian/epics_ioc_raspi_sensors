@@ -1,5 +1,6 @@
 # EPICS TOP directory items
 bin/
+db/
 dbd/
 lib/
 O.*/

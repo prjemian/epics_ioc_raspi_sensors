@@ -30,7 +30,7 @@ dbLoadRecords("$(STD)/stdApp/Db/misc.db","P=raspi:")
 
 
 # DHT22 humidity & temperature sensor on wiringPi pin 0
-dbLoadRecords("$(TOP)/raspiApp/Db/dht22.db","P=raspi:,C=0")
+dbLoadRecords("$(TOP)/db/dht22.db", "P=raspi:,C=0")
 doAfterIocInit("seq &dht22_seq, 'name=dht22_0,P=raspi:,C=0'")
 
 ###############################################################################
