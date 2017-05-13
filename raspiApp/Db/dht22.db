@@ -5,11 +5,13 @@ grecord(bo, "$(P)pin$(C):available")
     field (DESC, "DHT22 available")
     field (ZNAM, "not available")
     field (ONAM, "available")
+    field (VAL, "0")
 }
 
 grecord(longout, "$(P)pin$(C):status")
 {
     field (DESC, "DHT22 status")
+    field (VAL, "-1")
 }
 
 grecord(ao, "$(P)pin$(C):humidity")
@@ -18,16 +20,24 @@ grecord(ao, "$(P)pin$(C):humidity")
     field (EGU, "%")
     field (PREC, "1")
 }
-    #field (LINR, "LINEAR")
-    #field (ESLO, "0.000305180437934") # 20.0 / 0xffff 
-    #field (EOFF, "-10")
-    #field (DRVL, "-10")
-    #field (DRVH, "10")
-
 
 grecord(ao, "$(P)pin$(C):temperature")
 {
     field (DESC, "DHT22 temperature")
+    field (EGU, "C")
+    field (PREC, "1")
+}
+
+grecord(ao, "$(P)pin$(C):humidity:mean")
+{
+    field (DESC, "DHT22 humidity, 1 min average")
+    field (EGU, "%")
+    field (PREC, "1")
+}
+
+grecord(ao, "$(P)pin$(C):temperature:mean")
+{
+    field (DESC, "DHT22 temperature, 1 min average")
     field (EGU, "C")
     field (PREC, "1")
 }
