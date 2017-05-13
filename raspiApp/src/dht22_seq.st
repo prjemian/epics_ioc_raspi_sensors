@@ -10,7 +10,8 @@
  *      C  = wiringPi PIN number (default: 0)
  *
  */
-program dht22_seq("name=dht22_seq,P=,C=")
+ 
+program dht22_seq("name=dht22_seq,P=,C=0")
 
 option +d;		/* turn on run-time debugging messages */
 /* option -c;		/* continue execution before all PVs connected */
@@ -19,12 +20,20 @@ option -w;		/* Suppress warnings */
 
 %%#include <stdio.h>
 %%#include <math.h>
-#include <wiringPi.h>
 
-#include "dht22.h"
+/* #include <wiringPi.h> /* see issue #11 */
+%%int  wiringPiSetup      (void) ;
+
 #include "seqPVmacros.h"
 
-#define DHTPIN 0
+/* #include "dht22.h" */
+%% int read_dht22_dat(int dhtpin, float *h, float *t);
+#define READING_INVALID  -12.345e6
+#define STATUS_NO_ERROR  0
+#define STATUS_INVALID   1
+#define WIRINGPI_SETUP_FAILURE   -1
+
+#define DHTPIN {C}
 
 
 PV(int, available, "{P}pin{C}:available",   NoMon);
@@ -54,11 +63,10 @@ ss dht22_seq
 
     state reading
     {
-        when(!available) {} state idle
 
         when(available)
         {
-            PVPUT(status, read_dht22_dat(DHTPIN, &h, &t));
+            /* PVPUT(status, read_dht22_dat(DHTPIN, &h, &t)); */
             
             if (status == STATUS_NO_ERROR) {
                 PVPUT(h, h);
@@ -66,6 +74,8 @@ ss dht22_seq
             }
 
         } state idle
+
+        when(!available) {} state idle
 
     }
 
