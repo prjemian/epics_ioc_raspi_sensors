@@ -12,4 +12,4 @@ fi
 
 # start the IOC
 
-../../bin/${EPICS_HOST_ARCH}/raspi st.cmd
+sudo ../../bin/${EPICS_HOST_ARCH}/raspi st.cmd
