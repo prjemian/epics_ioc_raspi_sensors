@@ -15,6 +15,7 @@
 #include "dht22.h"
 
 static int DHTPIN = 0;
+int status = -1;
 
 #define DELAY_MS 1000
 
@@ -56,15 +57,17 @@ int main (int argc, char *argv[])
 
   while (tries != 0) 
   {
-     if (read_dht22_dat(DHTPIN, &h, &t) == STATUS_NO_ERROR)
+     status = read_dht22_dat(DHTPIN, &h, &t);
+     /* printf("DHT22, pin %d read status: %d\n", DHTPIN, status); */
+     if (status == STATUS_NO_ERROR)
         printf("pin: %d  T = %.2f F  humidity = %.2f %%\n", 
             DHTPIN, t * 9./5.+32., h);
      /* else
         printf("%d: reading invalid\n", tries+1); */
-     if (tries > 0) {
+     if (tries > 0)
          tries--;
+     if (tries != 0)
          delay(DELAY_MS); // wait 1sec to refresh
-    }
   }
 
   return 0 ;

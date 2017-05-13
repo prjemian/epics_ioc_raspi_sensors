@@ -41,6 +41,8 @@ int read_dht22_dat(int dhtpin, float *h, float *t)
   uint8_t laststate = HIGH;
   uint8_t counter = 0;
   uint8_t j = 0, i;
+  
+  /* printf("read_dht22_dat(%d)\n", dhtpin); */
 
   dht22_dat[0] = dht22_dat[1] = dht22_dat[2] = dht22_dat[3] = dht22_dat[4] = 0;
 
@@ -67,6 +69,7 @@ int read_dht22_dat(int dhtpin, float *h, float *t)
       }
     }
     laststate = sizecvt(digitalRead(dhtpin));
+    /* printf("pin:%d  i=%d laststate:%d\n", dhtpin, i, laststate); */
 
     if (counter == 255) break;
 
