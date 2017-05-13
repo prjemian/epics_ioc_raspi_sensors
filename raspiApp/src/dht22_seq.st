@@ -19,9 +19,9 @@ option -w;		/* Suppress warnings */
 
 %%#include <stdio.h>
 %%#include <math.h>
-%%#include <wiringPi.h>
+#include <wiringPi.h>
 
-%%#include "dht22.h"
+#include "dht22.h"
 #include "seqPVmacros.h"
 
 #define DHTPIN 0
