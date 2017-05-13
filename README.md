@@ -11,8 +11,8 @@ the Raspberry Pi.
 
 sensor | description | support | comments
 --- | --- | --- | ---
-DHT22 | humidity & temperature | work in progress ([#1](https://github.com/prjemian/raspi_epics_sensors/issues/1)) |
-DHT11 | humidity & temperature | superceded by DHT22 |
+DHT22 | humidity & temperature | with [v1.0](https://github.com/prjemian/ioc_raspi_sensors/releases/tag/v1.0) release | reads every 1s
+DHT11 | humidity & temperature | superceded by DHT22 | too unresponsive
 NTC100 | thermistor (temperature) | planned, use ADC over I2C |
 LDR | light-dependent resistor | planned, use ADC over I2C |
 HC-SR501 | PIR infrared proximity | planned |
