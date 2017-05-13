@@ -43,26 +43,36 @@ ifdef CAPUTRECORDER
 endif
 
 ifdef SNCSEQ
-	ifeq (seq-2-1, $(findstring seq-2-1, $(SNCSEQ)))
-		raspi_Common_DBD += devSequencer.dbd
-		raspi_Common_LIBS := seqDev seq pv $(raspi_Common_LIBS)
-	else ifeq (seq-2.1, $(findstring seq-2.1, $(SNCSEQ)))
-		raspi_Common_DBD += devSequencer.dbd
-		raspi_Common_LIBS := seqDev seq pv $(raspi_Common_LIBS)
-	else
-		# seq 2.2.
-		#raspiSupport_LIBS += seq pv
-		raspi_LIBS += seq pv
-		raspi_Common_LIBS := seq pv $(raspi_Common_LIBS)
+    raspi_Common_LIBS += seq pv
+    raspi_LIBS += seq pv
 
-		raspi_SRCS += dht22.c
+	# build DHT22 support in SNL
+	raspi_SRCS += dht22.c
+	raspi_SRCS += dht22_seq.st
+    raspi_Common_DBD += dht22_seq.dbd
 
-		raspi_SRCS += dht22_seq.st
-		raspi_DBD += dht22_seqSupport.dbd
+	USR_SYS_LIBS += wiringPi
 
-		USR_SYS_LIBS += wiringPi
+#	ifeq (seq-2-1, $(findstring seq-2-1, $(SNCSEQ)))
+#		raspi_Common_DBD += devSequencer.dbd
+#		raspi_Common_LIBS := seqDev seq pv $(raspi_Common_LIBS)
+#	else ifeq (seq-2.1, $(findstring seq-2.1, $(SNCSEQ)))
+#		raspi_Common_DBD += devSequencer.dbd
+#		raspi_Common_LIBS := seqDev seq pv $(raspi_Common_LIBS)
+#	else
+#		# seq 2.2.
+#		#raspiSupport_LIBS += seq pv
+#		raspi_LIBS += seq pv
+#		raspi_Common_LIBS := seq pv $(raspi_Common_LIBS)
 
-	endif
+#		raspi_SRCS += dht22.c
+
+#		raspi_SRCS += dht22_seq.st
+#		raspi_DBD += dht22_seqSupport.dbd
+
+#		USR_SYS_LIBS += wiringPi
+
+#	endif
 endif
 
 ifdef ASYN
