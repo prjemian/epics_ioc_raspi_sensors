@@ -173,6 +173,7 @@ endif
 raspi_SRCS_Linux    += iocraspiLinux_registerRecordDeviceDriver.cpp     raspiMain.cpp
 raspi_LIBS_Linux    += $(raspi_Common_LIBS)
 
+DBD += raspiSupport.dbd
 
 raspi_SRCS += dht22.c
 raspi_SRCS += dht22_seq.st

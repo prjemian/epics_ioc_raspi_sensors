@@ -10,7 +10,7 @@
  *      C  = wiringPi PIN number (default: 0)
  *
  */
-program dht22_seq("name=femto,P=,C=")
+program dht22_seq("name=dht22_seq,P=,C=")
 
 option +d;		/* turn on run-time debugging messages */
 /* option -c;		/* continue execution before all PVs connected */
