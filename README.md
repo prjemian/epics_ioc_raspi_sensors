@@ -13,7 +13,7 @@ sensor | description | support | comments
 --- | --- | --- | ---
 ADS1115 | 4 Channel 16 Bit I2C ADC | planned, use I2C bus | see [data table](documentation/dac-adc-calibration.md)
 DHT11 | humidity & temperature | superceded by DHT22 | too unresponsive
-DHT22 | humidity & temperature | with [v1.0](https://github.com/prjemian/ioc_raspi_sensors/releases/tag/v1.0) release | reads every 1s
+DHT22 | humidity & temperature | complete ([v1.0](https://github.com/prjemian/ioc_raspi_sensors/releases/tag/v1.0) release) | reads every 1s
 LDR | light-dependent resistor | planned, use ADC over I2C | voltage divider circuit
 HC-SR04 | ultrasonic range | planned |
 HC-SR501 | PIR infrared proximity | planned |
