@@ -1,6 +1,6 @@
 # dht22.db
 
-grecord(bo, "$(P)pin$(C):available")
+grecord(bo, "$(P)$(C):available")
 {
     field (DESC, "DHT22 available")
     field (ZNAM, "not available")
@@ -8,48 +8,50 @@ grecord(bo, "$(P)pin$(C):available")
     field (VAL, "0")
 }
 
-grecord(longout, "$(P)pin$(C):status")
+grecord(longout, "$(P)$(C):status")
 {
     field (DESC, "DHT22 status")
     field (VAL, "-1")
 }
 
-grecord(ao, "$(P)pin$(C):humidity")
+grecord(ao, "$(P)$(C):humidity")
 {
     field (DESC, "DHT22 humidity")
     field (EGU, "%")
     field (PREC, "1")
 }
 
-grecord(ao, "$(P)pin$(C):temperature")
+grecord(ao, "$(P)$(C):temperature")
 {
     field (DESC, "DHT22 temperature")
     field (EGU, "C")
     field (PREC, "1")
 }
 
-grecord(ao, "$(P)pin$(C):humidity:1m")
+# all averaging will be done by the dht22_seq.st sequence program
+
+grecord(ao, "$(P)$(C):humidity:1m")
 {
     field (DESC, "DHT22 humidity, 1 min average")
     field (EGU, "%")
     field (PREC, "1")
 }
 
-grecord(ao, "$(P)pin$(C):temperature:1m")
+grecord(ao, "$(P)$(C):temperature:1m")
 {
     field (DESC, "DHT22 temperature, 1 min average")
     field (EGU, "C")
     field (PREC, "1")
 }
 
-grecord(ao, "$(P)pin$(C):humidity:15m")
+grecord(ao, "$(P)$(C):humidity:15m")
 {
     field (DESC, "DHT22 humidity, 15 min average")
     field (EGU, "%")
     field (PREC, "1")
 }
 
-grecord(ao, "$(P)pin$(C):temperature:15m")
+grecord(ao, "$(P)$(C):temperature:15m")
 {
     field (DESC, "DHT22 temperature, 15 min average")
     field (EGU, "C")
