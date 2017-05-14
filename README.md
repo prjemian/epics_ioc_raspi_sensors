@@ -26,8 +26,21 @@ connected by USB to the RPi and
 [integrated in EPICS](http://prjemian.github.io/cmd_response/epics/streams.html)
 using the 
 [cmd_response](http://prjemian.github.io/cmd_response/)
-protocol.  This project is to eliminate the need 
-for the Arduino.  That can simplify deployment on the very
+protocol.  This project eliminates the need 
+for the Arduino.  Deployment is simplified on the very
 small form factor Raspberry Pi Zero W, which needs only a power
 source and access to WiFi in order to become an EPICS IOC
 on the LAN.
+
+Once built, the SD card can be imaged to create many such Raspberry Pi sensor 
+IOCs, each having an identical array of sensors.
+The only customization needed for each RPi is to set its unique hostname.
+My practice is to base this name on the last four text characters in the output of 
+`/proc/cpuino` (part of the unique RPi serial number).
+The IOC is configured to use this as its PV prefix, ensuring (with some confidence)
+that all its PVs will unique on the subnet.  Such as:
+
+    sudo hostname rpi-017f
+
+It is possible but not likely to have two RPIs on your subnet that
+match.  If you are so unlucky, add another digit or two to avoid this.
