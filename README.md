@@ -1,4 +1,4 @@
-# EPICS IOC on Raspberry Pi with sensors
+# EPICS IOC on Raspberry Pi with GPIO sensors
 
 This started as an 
 [EPICS](http://www.aps.anl.gov/epics)
