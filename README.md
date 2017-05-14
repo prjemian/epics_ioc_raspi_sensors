@@ -11,14 +11,14 @@ the Raspberry Pi.
 
 sensor | description | support | comments
 --- | --- | --- | ---
-DHT22 | humidity & temperature | with [v1.0](https://github.com/prjemian/ioc_raspi_sensors/releases/tag/v1.0) release | reads every 1s
+ADS1115 | 4 Channel 16 Bit I2C ADC | planned, use I2C bus | see [data table](documentation/dac-adc-calibration.md)
 DHT11 | humidity & temperature | superceded by DHT22 | too unresponsive
-NTC100 | thermistor (temperature) | planned, use ADC over I2C |
-LDR | light-dependent resistor | planned, use ADC over I2C |
-HC-SR501 | PIR infrared proximity | planned |
-ADS1115 | 4 Channel 16 Bit I2C ADC | planned | see [data table](documentation/dac-adc-calibration.md)
-MCP4725 | 12 Bit 2.7V-5.5V I2C DAC | planned |
+DHT22 | humidity & temperature | with [v1.0](https://github.com/prjemian/ioc_raspi_sensors/releases/tag/v1.0) release | reads every 1s
+LDR | light-dependent resistor | planned, use ADC over I2C | voltage divider circuit
 HC-SR04 | ultrasonic range | planned |
+HC-SR501 | PIR infrared proximity | planned |
+MCP4725 | 12 Bit 2.7V-5.5V I2C DAC | planned, use I2C bus | 
+NTC10k | thermistor (temperature) | planned, use ADC over I2C | voltage divider circuit
 
 Already, we have integrated many of these sensors on Arduino
 connected by USB to the RPi and 
