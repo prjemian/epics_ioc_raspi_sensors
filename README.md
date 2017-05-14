@@ -40,7 +40,16 @@ My practice is to base this name on the last four text characters in the output 
 The IOC is configured to use this as its PV prefix, ensuring (with some confidence)
 that all its PVs will unique on the subnet.  Such as:
 
-    sudo hostname rpi-017f
+    pi@rpi170f:~ $ cat /proc/cpuinfo | tail -1
+    Serial		: 000000004887170f
+    pi@rpi170f:~ $ sudo hostname rpi170f
+
+Then, all PVs will start with `rpi170f:`, such as:
+
+EPICS PV | meaning
+--- | ---
+`rpi1705:pin0:humidity` |  most recent humidity reading
+`rpi1705:pin0:temperature` | most recent temperature reading
 
 It is possible but not likely to have two RPIs on your subnet that
 match.  If you are so unlucky, add another digit or two to avoid this.
