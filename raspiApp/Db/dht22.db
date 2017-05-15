@@ -36,6 +36,12 @@ grecord(ao, "$(P)$(C):humidity:1m")
     field (EGU, "%")
     field (PREC, "1")
 }
+grecord(ao, "$(P)$(C):humidity:1m:sdev")
+{
+    field (DESC, "DHT22 humidity, 1 min std. dev.")
+    field (EGU, "%")
+    field (PREC, "1")
+}
 
 grecord(ao, "$(P)$(C):temperature:1m")
 {
@@ -43,6 +49,13 @@ grecord(ao, "$(P)$(C):temperature:1m")
     field (EGU, "C")
     field (PREC, "1")
 }
+grecord(ao, "$(P)$(C):temperature:1m:sdev")
+{
+    field (DESC, "DHT22 temperature, 1 min std. dev.")
+    field (EGU, "C")
+    field (PREC, "1")
+}
+
 
 grecord(ao, "$(P)$(C):humidity:15m")
 {
@@ -50,10 +63,22 @@ grecord(ao, "$(P)$(C):humidity:15m")
     field (EGU, "%")
     field (PREC, "1")
 }
+grecord(ao, "$(P)$(C):humidity:15m:sdev")
+{
+    field (DESC, "DHT22 humidity, 15 min std. dev.")
+    field (EGU, "%")
+    field (PREC, "1")
+}
 
 grecord(ao, "$(P)$(C):temperature:15m")
 {
     field (DESC, "DHT22 temperature, 15 min average")
+    field (EGU, "C")
+    field (PREC, "1")
+}
+grecord(ao, "$(P)$(C):temperature:15m:sdev")
+{
+    field (DESC, "DHT22 temperature, 15 min std. dev.")
     field (EGU, "C")
     field (PREC, "1")
 }
