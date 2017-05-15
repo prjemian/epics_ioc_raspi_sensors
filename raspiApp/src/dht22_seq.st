@@ -39,12 +39,18 @@ int wiringPi_pin;
 
 PV(int, available, "{P}{C}:available",   NoMon);
 PV(int, status,    "{P}{C}:status",      NoMon);
-PV(float, t,       "{P}{C}:temperature", NoMon);
-PV(float, h,       "{P}{C}:humidity",    NoMon);
-PV(float, t_1m,       "{P}{C}:temperature:1m", NoMon);
+
+PV(float, h,          "{P}{C}:humidity",    NoMon);
 PV(float, h_1m,       "{P}{C}:humidity:1m",    NoMon);
-PV(float, t_15m,       "{P}{C}:temperature:15m", NoMon);
-PV(float, h_15m,       "{P}{C}:humidity:15m",    NoMon);
+PV(float, h_sdev_1m,  "{P}{C}:humidity:1m:sdev",    NoMon);
+PV(float, h_15m,      "{P}{C}:humidity:15m",    NoMon);
+PV(float, h_sdev_15m, "{P}{C}:humidity:15m:sdev", NoMon);
+
+PV(float, t,            "{P}{C}:temperature", NoMon);
+PV(float, t_1m,         "{P}{C}:temperature:1m", NoMon);
+PV(float, t_sdev_1m,    "{P}{C}:temperature:1m:sdev", NoMon);
+PV(float, t_15m,        "{P}{C}:temperature:15m", NoMon);
+PV(float, t_sdev_15m,   "{P}{C}:temperature:15m:sdev", NoMon);
 
 char msg[256];
 char* SNLtaskName;
