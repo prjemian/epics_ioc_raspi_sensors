@@ -79,7 +79,7 @@ char* SNLtaskName;
 ss dht22_seq
 {
 
-    state init
+    state setup
     {
         when()
         {
@@ -94,6 +94,15 @@ ss dht22_seq
 
         } state reading
 
+    }
+
+    state loop
+    {
+        when( delay(1.) && available )
+        {
+        } state reading
+
+        when( delay(.1) && !available ) {} state loop
     }
 
     state reading
@@ -113,19 +122,10 @@ ss dht22_seq
                 PVPUT(t, t);
             }
 
-        } state idle
+        } state loop
 
-        when(!available) {} state idle
+        when(!available) {} state loop
 
-    }
-
-    state idle
-    {
-        when( delay(1.) && available )
-        {
-        } state reading
-
-        when( delay(.1) && !available ) {} state idle
     }
 
 }
