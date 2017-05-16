@@ -14,6 +14,7 @@ class StatsRegisters {
     double yy;		// sum of y^2
     double xy;		// sum of x*y
 
+	StatsRegisters ();      // constructor
 	void SumClr ();      // clear the stats registers
 	void SumAdd (double, double);       // add an X,Y pair
 	void SumSub (double, double);       // remove an X,Y pair

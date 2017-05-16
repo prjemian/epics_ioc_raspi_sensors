@@ -7,6 +7,11 @@
 
 // TODO: documentation
 
+StatsRegisters::StatsRegisters ()
+{
+    SumClr();
+}
+
 void StatsRegisters::SumClr ()
 {
     weight = 0.0;

@@ -11,7 +11,7 @@ using namespace std;
 int main() {
    StatsRegisters reg1;
 
-   reg1.x = 5.0;
+   // reg1.x = 5.0;
    cout << "Hello World" << endl;
    cout << sizeof(reg1) << endl;
    cout << reg1.x << endl;
