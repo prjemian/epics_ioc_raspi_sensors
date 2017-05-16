@@ -37,10 +37,10 @@ raspi_Common_DBD += base.dbd
 #	raspi_Common_LIBS := caPutLog $(raspi_Common_LIBS)
 #endif
 
-ifdef CAPUTRECORDER
-	raspi_Common_DBD += caputRecorder.dbd
-	raspi_Common_LIBS := caputRecorder $(raspi_Common_LIBS)
-endif
+#ifdef CAPUTRECORDER
+#	raspi_Common_DBD += caputRecorder.dbd
+#	raspi_Common_LIBS := caputRecorder $(raspi_Common_LIBS)
+#endif
 
 ifdef SNCSEQ
     raspi_Common_LIBS += seq pv
@@ -75,97 +75,97 @@ ifdef SNCSEQ
 #	endif
 endif
 
-ifdef ASYN
-	raspi_Common_DBD += asyn.dbd drvAsynSerialPort.dbd
-	raspi_Common_DBD += drvAsynIPPort.dbd drvVxi11.dbd devGpib.dbd
-	raspi_Common_LIBS := asyn $(raspi_Common_LIBS)
-endif
+#ifdef ASYN
+#	raspi_Common_DBD += asyn.dbd drvAsynSerialPort.dbd
+#	raspi_Common_DBD += drvAsynIPPort.dbd drvVxi11.dbd devGpib.dbd
+#	raspi_Common_LIBS := asyn $(raspi_Common_LIBS)
+#endif
 
 ifdef STD
 	raspi_Common_DBD += stdSupport.dbd
 	raspi_Common_LIBS := std $(raspi_Common_LIBS)
 endif
 
-ifdef CALC
-	raspi_Common_DBD += calcSupport.dbd
-	raspi_Common_LIBS := calc $(raspi_Common_LIBS)
-endif
+#ifdef CALC
+#	raspi_Common_DBD += calcSupport.dbd
+#	raspi_Common_LIBS := calc $(raspi_Common_LIBS)
+#endif
 
-ifdef BUSY
-	raspi_Common_DBD += busySupport.dbd
-	raspi_Common_LIBS := busy $(raspi_Common_LIBS)
-endif
+#ifdef BUSY
+#	raspi_Common_DBD += busySupport.dbd
+#	raspi_Common_LIBS := busy $(raspi_Common_LIBS)
+#endif
 
-ifdef SSCAN
-	raspi_Common_DBD += sscanSupport.dbd
-	raspi_Common_LIBS := sscan $(raspi_Common_LIBS)
-	ifdef SNCSEQ
-		raspi_Common_DBD += sscanProgressSupport.dbd
-		raspi_Common_LIBS := scanProgress $(raspi_Common_LIBS)
-	endif
-endif
+#ifdef SSCAN
+#	raspi_Common_DBD += sscanSupport.dbd
+#	raspi_Common_LIBS := sscan $(raspi_Common_LIBS)
+#	ifdef SNCSEQ
+#		raspi_Common_DBD += sscanProgressSupport.dbd
+#		raspi_Common_LIBS := scanProgress $(raspi_Common_LIBS)
+#	endif
+#endif
 
 ifdef AUTOSAVE
 	raspi_Common_DBD += asSupport.dbd
 	raspi_Common_LIBS := autosave $(raspi_Common_LIBS)
 endif
 
-ifdef OPTICS
-	raspi_Common_DBD += opticsSupport.dbd
-	raspi_Common_LIBS := optics $(raspi_Common_LIBS)
-endif
+#ifdef OPTICS
+#	raspi_Common_DBD += opticsSupport.dbd
+#	raspi_Common_LIBS := optics $(raspi_Common_LIBS)
+#endif
 
-ifdef MCA
-	raspi_Common_DBD += mcaSupport.dbd
-	raspi_Common_LIBS := mca $(raspi_Common_LIBS)
-endif
+#ifdef MCA
+#	raspi_Common_DBD += mcaSupport.dbd
+#	raspi_Common_LIBS := mca $(raspi_Common_LIBS)
+#endif
 
 #ifdef IP
 #	raspi_Common_DBD += ipSupport.dbd
 #	raspi_Common_LIBS := ip $(raspi_Common_LIBS)
 #endif
 
-ifdef MODBUS
-	raspi_Common_DBD += modbusSupport.dbd
-	raspi_Common_LIBS := modbus $(raspi_Common_LIBS)
-endif
+#ifdef MODBUS
+#	raspi_Common_DBD += modbusSupport.dbd
+#	raspi_Common_LIBS := modbus $(raspi_Common_LIBS)
+#endif
 
-ifdef MOTOR
-	raspi_Common_DBD += motorSupport.dbd 
-	#raspi_Common_DBD += devAcsMotor.dbd devAerotech.dbd
-	#raspi_Common_DBD += devAttocube.dbd devFaulhaberMotor.dbd devImsMotor.dbd
-	#raspi_Common_DBD += devKohzuMotor.dbd devMclennanMotor.dbd devMicos.dbd
-	#raspi_Common_DBD += devMicroMo.dbd devNewFocus.dbd devNewport.dbd
-	#raspi_Common_DBD += devOriel.dbd devPC6K.dbd devPIJena.dbd devPIMotor.dbd
-	#raspi_Common_DBD += devSPiiPlus.dbd devSmartMotorMotor.dbd 
-	#raspi_Common_DBD += devThorLabs.dbd 
-	raspi_Common_DBD += devSoftMotor.dbd
-	raspi_Common_DBD += motorSimSupport.dbd
+#ifdef MOTOR
+#	raspi_Common_DBD += motorSupport.dbd 
+#	#raspi_Common_DBD += devAcsMotor.dbd devAerotech.dbd
+#	#raspi_Common_DBD += devAttocube.dbd devFaulhaberMotor.dbd devImsMotor.dbd
+#	#raspi_Common_DBD += devKohzuMotor.dbd devMclennanMotor.dbd devMicos.dbd
+#	#raspi_Common_DBD += devMicroMo.dbd devNewFocus.dbd devNewport.dbd
+#	#raspi_Common_DBD += devOriel.dbd devPC6K.dbd devPIJena.dbd devPIMotor.dbd
+#	#raspi_Common_DBD += devSPiiPlus.dbd devSmartMotorMotor.dbd 
+#	#raspi_Common_DBD += devThorLabs.dbd 
+#	raspi_Common_DBD += devSoftMotor.dbd
+#	raspi_Common_DBD += motorSimSupport.dbd
 
-	raspi_Common_LIBS := motor $(raspi_Common_LIBS)
-	#raspi_Common_LIBS := Acs acsTech80 Aerotech $(raspi_Common_LIBS)
-	#raspi_Common_LIBS := Attocube Faulhaber Ims $(raspi_Common_LIBS)
-	#raspi_Common_LIBS := KohzuMotor Mclennan Micos $(raspi_Common_LIBS)
-	#raspi_Common_LIBS := MicroMo NewFocus Newport $(raspi_Common_LIBS)
-	#raspi_Common_LIBS := Oriel PI PIJena $(raspi_Common_LIBS)
-	#raspi_Common_LIBS := Parker $(raspi_Common_LIBS)
-	#raspi_Common_LIBS := SmartMotor $(raspi_Common_LIBS)
-	#raspi_Common_LIBS := ThorLabs $(raspi_Common_LIBS)
-	raspi_Common_LIBS := softMotor $(raspi_Common_LIBS)
-	raspi_Common_LIBS := motorSimSupport $(raspi_Common_LIBS)
-endif
+#	raspi_Common_LIBS := motor $(raspi_Common_LIBS)
+#	#raspi_Common_LIBS := Acs acsTech80 Aerotech $(raspi_Common_LIBS)
+#	#raspi_Common_LIBS := Attocube Faulhaber Ims $(raspi_Common_LIBS)
+#	#raspi_Common_LIBS := KohzuMotor Mclennan Micos $(raspi_Common_LIBS)
+#	#raspi_Common_LIBS := MicroMo NewFocus Newport $(raspi_Common_LIBS)
+#	#raspi_Common_LIBS := Oriel PI PIJena $(raspi_Common_LIBS)
+#	#raspi_Common_LIBS := Parker $(raspi_Common_LIBS)
+#	#raspi_Common_LIBS := SmartMotor $(raspi_Common_LIBS)
+#	#raspi_Common_LIBS := ThorLabs $(raspi_Common_LIBS)
+#	raspi_Common_LIBS := softMotor $(raspi_Common_LIBS)
+#	raspi_Common_LIBS := motorSimSupport $(raspi_Common_LIBS)
+#endif
 
-ifdef STREAM
-	raspi_Common_DBD += stream.dbd streamSynApps.dbd
-	raspi_Common_LIBS := stream streamSynApps $(raspi_Common_LIBS)
-endif
+#ifdef STREAM
+#	raspi_Common_DBD += stream.dbd streamSynApps.dbd
+#	raspi_Common_LIBS := stream streamSynApps $(raspi_Common_LIBS)
+#endif
 
-ifdef DEVIOCSTATS
-  ifneq ($(OS_CLASS), WIN32)
-	raspi_Common_DBD += devIocStats.dbd iocAdmin.dbd
-	raspi_Common_LIBS := devIocStats $(raspi_Common_LIBS)
-  endif
-endif
+#ifdef DEVIOCSTATS
+#  ifneq ($(OS_CLASS), WIN32)
+#	raspi_Common_DBD += devIocStats.dbd iocAdmin.dbd
+#	raspi_Common_LIBS := devIocStats $(raspi_Common_LIBS)
+#  endif
+#endif
 
 
 #ifdef ALIVE
@@ -182,10 +182,10 @@ ifneq (,$(findstring linux, $(T_A)))
 	DBD  += iocraspiLinux.dbd
 	iocraspiLinux_DBD += raspi_Common.dbd
 
-	ifdef IPAC
-		iocraspiLinux_DBD += drvIpac.dbd
-		raspi_LIBS_Linux += Ipac
-	endif
+#	ifdef IPAC
+#		iocraspiLinux_DBD += drvIpac.dbd
+#		raspi_LIBS_Linux += Ipac
+#	endif
 
 endif
 
