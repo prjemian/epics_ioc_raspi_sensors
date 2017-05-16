@@ -1,0 +1,7 @@
+$(P)$(C):temperature.EGU
+$(P)$(C):temperature:1m.EGU
+$(P)$(C):temperature:1m:sdev.EGU
+$(P)$(C):temperature:15m.EGU
+$(P)$(C):temperature:15m:sdev.EGU
+$(P)$(C):temperature:60m.EGU
+$(P)$(C):temperature:60m:sdev.EGU
