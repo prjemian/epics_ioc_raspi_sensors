@@ -32,7 +32,7 @@ dbLoadRecords("$(STD)/stdApp/Db/misc.db","P=$(PREFIX)")
 
 # DHT22 humidity & temperature sensor on wiringPi pin 0
 dbLoadRecords("$(TOP)/db/dht22.db", "P=$(PREFIX),C=0")
-doAfterIocInit("seq dht22_seq, 'name=dht22_0,P=$(PREFIX),C=0'")
+#doAfterIocInit("seq dht22_seq, 'name=dht22_0,P=$(PREFIX),C=0'")
 
 ###############################################################################
 iocInit
@@ -41,6 +41,7 @@ iocInit
 # write all the PV names to a local file
 dbl > dbl-all.txt
 
+seq dht22_seq, "name=dht22_0,P=$(PREFIX),C=0"
 
 # print the time our boot was finished
 date
