@@ -40,17 +40,37 @@ int wiringPi_pin;
 PV(int, available, "{P}{C}:available",   NoMon);
 PV(int, status,    "{P}{C}:status",      NoMon);
 
-PV(float, h,          "{P}{C}:humidity",    NoMon);
-PV(float, h_1m,       "{P}{C}:humidity:1m",    NoMon);
-PV(float, h_sdev_1m,  "{P}{C}:humidity:1m:sdev",    NoMon);
-PV(float, h_15m,      "{P}{C}:humidity:15m",    NoMon);
+PV(float, h,          "{P}{C}:humidity",          NoMon);
+PV(float, h_1m,       "{P}{C}:humidity:1m",       NoMon);
+PV(float, h_sdev_1m,  "{P}{C}:humidity:1m:sdev",  NoMon);
+PV(float, h_15m,      "{P}{C}:humidity:15m",      NoMon);
 PV(float, h_sdev_15m, "{P}{C}:humidity:15m:sdev", NoMon);
+PV(float, h_60m,      "{P}{C}:humidity:60m",      NoMon);
+PV(float, h_sdev_60m, "{P}{C}:humidity:60m:sdev", NoMon);
 
-PV(float, t,            "{P}{C}:temperature", NoMon);
-PV(float, t_1m,         "{P}{C}:temperature:1m", NoMon);
-PV(float, t_sdev_1m,    "{P}{C}:temperature:1m:sdev", NoMon);
-PV(float, t_15m,        "{P}{C}:temperature:15m", NoMon);
-PV(float, t_sdev_15m,   "{P}{C}:temperature:15m:sdev", NoMon);
+PV(float, t,          "{P}{C}:temperature",          NoMon);
+PV(float, t_1m,       "{P}{C}:temperature:1m",       NoMon);
+PV(float, t_sdev_1m,  "{P}{C}:temperature:1m:sdev",  NoMon);
+PV(float, t_15m,      "{P}{C}:temperature:15m",      NoMon);
+PV(float, t_sdev_15m, "{P}{C}:temperature:15m:sdev", NoMon);
+PV(float, t_60m,      "{P}{C}:temperature:60m",      NoMon);
+PV(float, t_sdev_60m, "{P}{C}:temperature:60m:sdev", NoMon);
+
+PV(string, h_egu,          "{P}{C}:humidity.EGU",          Monitor);
+PV(string, h_egu_1m,       "{P}{C}:humidity:1m.EGU",       Monitor);
+PV(string, h_egu_sdev_1m,  "{P}{C}:humidity:1m:sdev.EGU",  Monitor);
+PV(string, h_egu_15m,      "{P}{C}:humidity:15m.EGU",      Monitor);
+PV(string, h_egu_sdev_15m, "{P}{C}:humidity:15m:sdev.EGU", Monitor);
+PV(string, h_egu_60m,      "{P}{C}:humidity:60m.EGU",      Monitor);
+PV(string, h_egu_sdev_60m, "{P}{C}:humidity:60m:sdev.EGU", Monitor);
+
+PV(string, t_egu,          "{P}{C}:temperature.EGU",          Monitor);
+PV(string, t_egu_1m,       "{P}{C}:temperature:1m.EGU",       Monitor);
+PV(string, t_egu_sdev_1m,  "{P}{C}:temperature:1m:sdev.EGU",  Monitor);
+PV(string, t_egu_15m,      "{P}{C}:temperature:15m.EGU",      Monitor);
+PV(string, t_egu_sdev_15m, "{P}{C}:temperature:15m:sdev.EGU", Monitor);
+PV(string, t_egu_60m,      "{P}{C}:temperature:60m.EGU",      Monitor);
+PV(string, t_egu_sdev_60m, "{P}{C}:temperature:60m:sdev.EGU", Monitor);
 
 char msg[256];
 char* SNLtaskName;
