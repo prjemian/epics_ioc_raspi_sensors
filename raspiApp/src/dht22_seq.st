@@ -21,6 +21,7 @@ option -w;		/* Suppress warnings */
 %%#include <stdio.h>
 %%#include <stdlib.h>
 %%#include <math.h>
+#include "stats.h"
 
 /* #include <wiringPi.h> /* see issue #11 */
 %%int  wiringPiSetup      (void) ;
