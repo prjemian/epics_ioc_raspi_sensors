@@ -13,6 +13,7 @@ include $(TOP)/configure/CONFIG
 #DB += raspi.db
 
 DB += dht22.db
+DB += dht22.req
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
