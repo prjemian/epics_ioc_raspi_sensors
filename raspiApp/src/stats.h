@@ -1,37 +1,37 @@
-// stats.h
-//
-// calculator-style statistics registers
+/* stats.h
+ *
+ * calculator-style statistics registers
+ *
+ * All functions prefixed with `SR_`
+ */
 
-// TODO: documentation
+/* TODO: documentation */
 
-class StatsRegisters {
+typedef struct StatsRegisters_struct {
+    double weight;	/* sum of weights */
+    double x;		/* sum of x */
+    double xx;		/* sum of x^2 */
+    double y;		/* sum of y */
+    double yy;		/* sum of y^2 */
+    double xy;		/* sum of x*y */
+} SR_StatsRegisters;
 
-   public:
-    double weight;	// sum of weights
-    double x;		// sum of x
-    double xx;		// sum of x^2
-    double y;		// sum of y
-    double yy;		// sum of y^2
-    double xy;		// sum of x*y
+void SR_SumClr (SR_StatsRegisters *);      // clear the stats registers
+void SR_SumAdd (SR_StatsRegisters *, double, double);       // add an X,Y pair
+void SR_SumSub (SR_StatsRegisters *, double, double);       // remove an X,Y pair
+void SR_SwtAdd (SR_StatsRegisters *, double,double,double); // add an X,Y pair with weight Z
+void SR_SwtSub (SR_StatsRegisters *, double,double,double); // remove an X,Y pair with weight Z
+double SR_MeanX (SR_StatsRegisters *);   					// arithmetic mean of X
+double SR_MeanY (SR_StatsRegisters *);   					// arithmetic mean of Y
+double SR_SDevX (SR_StatsRegisters *);   					// standard deviation of X
+double SR_SDevY (SR_StatsRegisters *);   					// standard deviation of Y
+double SR_SErrX (SR_StatsRegisters *);   					// standard error of X
+double SR_SErrY (SR_StatsRegisters *);   					// standard error of Y
+double SR_LR_intercept (SR_StatsRegisters *);    		// constant term of linear regression
+double SR_LR_slope (SR_StatsRegisters *);    			// slope term of linear regression
+double SR_LR_intercept_var (SR_StatsRegisters *);    	// variance of constant term
+double SR_LR_slope_var (SR_StatsRegisters *);    		// variance of slope term
+double SR_CorLR (SR_StatsRegisters *);                    // the regression coefficient
+double SR_CorCoe (SR_StatsRegisters *);                   // relation of errors in slope & intercept
 
-	StatsRegisters ();      // constructor
-	void SumClr ();      // clear the stats registers
-	void SumAdd (double, double);       // add an X,Y pair
-	void SumSub (double, double);       // remove an X,Y pair
-	void SwtAdd (double,double,double); // add an X,Y pair with weight Z
-	void SwtSub (double,double,double); // remove an X,Y pair with weight Z
-	double MeanX ();   					// arithmetic mean of X
-	double MeanY ();   					// arithmetic mean of Y
-	double SDevX ();   					// standard deviation of X
-	double SDevY ();   					// standard deviation of Y
-	double SErrX ();   					// standard error of X
-	double SErrY ();   					// standard error of Y
-	double LR_intercept ();    		// constant term of linear regression
-	double LR_slope ();    			// slope term of linear regression
-	double LR_intercept_var ();    	// variance of constant term
-	double LR_slope_var ();    		// variance of slope term
-	double CorLR ();                    // the regression coefficient
-	double CorCoe ();                   // relation of errors in slope & intercept
-
-   	double Determinant ();
-};
+double SR_Determinant (SR_StatsRegisters *);
