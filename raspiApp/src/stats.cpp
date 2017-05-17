@@ -3,7 +3,7 @@
 // calculator-style statistics registers
 
 #include <math.h>
-#include "stats.h"
+#include "stats.hpp"
 
 // TODO: documentation
 

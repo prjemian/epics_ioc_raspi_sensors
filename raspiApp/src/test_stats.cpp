@@ -5,7 +5,7 @@
 // TODO: convert into unit test code
 
 #include <iostream>
-#include "stats.h"
+#include "stats.hpp"
 using namespace std;
 
 int main() {
