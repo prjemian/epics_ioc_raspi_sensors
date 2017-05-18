@@ -18,10 +18,12 @@ option +d;		/* turn on run-time debugging messages */
 option +r;		/* allow more than one instance of this code */
 option -w;		/* Suppress warnings */
 
+%%#include <math.h>
 %%#include <stdio.h>
 %%#include <stdlib.h>
-%%#include <math.h>
-#include "stats.h"
+%%#include <time.h>
+%%#include <unistd.h>
+%%#include "stats.h"
 
 /* #include <wiringPi.h> /* see issue #11 */
 %%int  wiringPiSetup      (void) ;
@@ -35,8 +37,27 @@ option -w;		/* Suppress warnings */
 #define STATUS_INVALID   1
 #define WIRINGPI_SETUP_FAILURE   -1
 
-int wiringPi_pin;
+#define SECONDS_1M 60
+#define SECONDS_15M (SECONDS_1M*15)
+#define SECONDS_60M (SECONDS_1M*60)
 
+int wiringPi_pin;
+%{
+SR_StatsRegisters sr_1m;
+SR_StatsRegisters sr_15m;
+SR_StatsRegisters sr_60m;
+
+time_t time_now;
+time_t timer_1m;
+time_t timer_15m;
+time_t timer_60m;
+time_t timer_reading;
+}%
+
+int report_on_1m  = 1;
+int report_on_15m = 1;
+int report_on_60m = 1;
+int take_reading  = 1;
 
 PV(int, available, "{P}{C}:available",   NoMon);
 PV(int, status,    "{P}{C}:status",      NoMon);
@@ -93,17 +114,114 @@ ss dht22_seq
             PVPUT(status, wiringPiSetup());
             PVPUT(available, !status);
 
-        } state reading
+%{
+            SR_SumClr(&sr_1m);
+            SR_SumClr(&sr_15m);
+            SR_SumClr(&sr_60m);
+
+            time_now = time(NULL);
+            timer_reading = time_now;
+            /* update these early, the first time around */
+            timer_1m = time_now + 1;
+            timer_15m = time_now + 1;
+            timer_60m = time_now + 1;
+}%
+
+        } state loop
 
     }
 
     state loop
     {
-        when( delay(1.) && available )
+        when( available && take_reading )
         {
+%%          time_now = time(NULL);
+%%			timer_reading = time_now + 1;
+			take_reading = 0;
         } state reading
 
-        when( delay(.1) && !available ) {} state loop
+        when( available && report_on_1m )
+        {
+%%			time_now = time(NULL);
+			printf("%s (%d) %s  %g readings\n", 
+				SNLtaskName, __LINE__, "1m update", sr_1m.weight);
+			if (sr_1m.weight > 0) {
+
+%{
+                pVar->h_1m = SR_MeanX(&sr_1m);
+                pVar->t_1m = SR_MeanY(&sr_1m);
+                pVar->h_sdev_1m = SR_SDevX(&sr_1m);
+                pVar->t_sdev_1m = SR_SDevY(&sr_1m);
+				SR_SumClr(&sr_1m);
+}%
+
+                pvPut(h_1m,SYNC);
+                pvPut(t_1m,SYNC);
+                pvPut(h_sdev_1m,SYNC);
+                pvPut(t_sdev_1m,SYNC);
+            }
+			report_on_1m = 0;
+%%			timer_1m = (1 + time_now/SECONDS_1M)*SECONDS_1M;
+        } state loop
+
+        when( available && report_on_15m )
+        {
+%%			time_now = time(NULL);
+			printf("%s (%d) %s  %g readings\n", 
+				SNLtaskName, __LINE__, "15m update", sr_15m.weight);
+			if (sr_15m.weight > 0) {
+
+%{
+                pVar->h_15m = SR_MeanX(&sr_15m);
+                pVar->t_15m = SR_MeanY(&sr_15m);
+                pVar->h_sdev_15m = SR_SDevX(&sr_15m);
+                pVar->t_sdev_15m = SR_SDevY(&sr_15m);
+				SR_SumClr(&sr_15m);
+}%
+
+                pvPut(h_15m,SYNC);
+                pvPut(t_15m,SYNC);
+                pvPut(h_sdev_15m,SYNC);
+                pvPut(t_sdev_15m,SYNC);
+            }
+			report_on_15m = 0;
+%%			timer_15m = (1 + time_now/SECONDS_15M)*SECONDS_15M;
+
+        } state loop
+
+        when( available && report_on_60m )
+        {
+%%			time_now = time(NULL);
+			printf("%s (%d) %s  %g readings\n", 
+				SNLtaskName, __LINE__, "60m update", sr_60m.weight);
+			if (sr_60m.weight > 0) {
+
+%{
+                pVar->h_60m = SR_MeanX(&sr_60m);
+                pVar->t_60m = SR_MeanY(&sr_60m);
+                pVar->h_sdev_60m = SR_SDevX(&sr_60m);
+                pVar->t_sdev_60m = SR_SDevY(&sr_60m);
+				SR_SumClr(&sr_60m);
+}%
+
+                pvPut(h_60m,SYNC);
+                pvPut(t_60m,SYNC);
+                pvPut(h_sdev_60m,SYNC);
+                pvPut(t_sdev_60m,SYNC);
+            }
+			report_on_60m = 0;
+%%			timer_60m = (1 + time_now/SECONDS_60M)*SECONDS_60M;
+        } state loop
+
+        when( available && delay(.1) ) {
+%{
+			time_now = time(NULL);
+			pVar->take_reading  = (time_now >= timer_reading);
+			pVar->report_on_1m  = (time_now >= timer_1m);
+			pVar->report_on_15m = (time_now >= timer_15m);
+			pVar->report_on_60m = (time_now >= timer_60m);
+}%
+        } state loop
     }
 
     state reading
@@ -121,6 +239,9 @@ ss dht22_seq
                 */
                 PVPUT(h, h);
                 PVPUT(t, t);
+                SR_SumAdd(&sr_1m, h, t);
+                SR_SumAdd(&sr_15m, h, t);
+                SR_SumAdd(&sr_60m, h, t);
             }
 
         } state loop

@@ -47,6 +47,7 @@ ifdef SNCSEQ
     raspi_LIBS += seq pv
 
 	# build DHT22 support in SNL
+	raspi_SRCS += stats.c
 	raspi_SRCS += dht22.c
 	raspi_SRCS += dht22_seq.st
     raspi_Common_DBD += dht22_seq.dbd
