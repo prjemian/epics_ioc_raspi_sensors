@@ -1,0 +1,18 @@
+#!/bin/bash
+# file: cron_start_ioc
+#
+# checks if IOC is running, starts it if not running
+
+# crontab line
+#*/5 * * * * /usr/local/epics/ioc/raspi/cron_start_ioc 2>&1 > /dev/null
+
+export IOCDIR=`pwd`/iocBoot/iocLinux
+export SCRIPT=${IOCDIR}/raspi.sh
+
+cd ${IOCDIR}
+export STATUS=`${SCRIPT} status | grep not`
+
+if [ "not" = "${STATUS}" ]; then
+    ${SCRIPT} start
+fi
+
