@@ -18,10 +18,10 @@ export STATUS=`${SCRIPT} status | grep not`
 #echo ${STATUS}
 
 if [ "" != "${STATUS}" ]; then
-    echo "`date`: starting IOC with ${SCRIPT} start"
     cd ${IOCDIR}
-    ${SCRIPT} start
+    echo "`date`: start command = ${SCRIPT} start"
+    echo "`date`: `${SCRIPT} start`"
     sleep 2
-    ${SCRIPT} status
+    echo "`date`: status = `${SCRIPT} status`"
 fi
 
