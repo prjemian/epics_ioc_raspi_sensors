@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="pvlist.xsl" ?>
+
+<!-- You can edit this file with a text editor -->
+
+<pvwatch version="1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="local_schema pvlist.xsd">
+	<!-- (update version if format of XML file changes) -->
+
+  <definition name="mne">
+  	one-word mnemonic reference used in python and xslt code
+  	(mne should be unique for each EPICS_PV)
+  </definition>
+  <definition name="PV">
+  	EPICS process variable name (must be used in only one EPICS_PV)
+  </definition>
+  <definition name="description">
+  	useful text informative to others
+  </definition>
+  <definition name="display_format">
+  	(optional, default="%s") PVs will be formatted for display with this string
+  </definition>
+  <definition name="_ignore_">
+    (optional, default="false") this PV is ignored if value is not "false"
+  </definition>
+  <definition name="as_string">
+    (optional, default="false") write this PV from formatted raw_value if "false", from char_value if "true"
+  </definition>
+  
+  <EPICS_PV PV="rpi5bf5:datetime" 		description="IOC current time"  	mne="rpi5bf5_tod"/>
+  <EPICS_PV PV="rpi5bf5:0:available"  	description="rpi5bf5_DHT22 #0 is available"  	mne="rpi5bf5_dht22_0_available" as_string="true"/>
+  <EPICS_PV PV="rpi5bf5:0:status"  		description="rpi5bf5_DHT22 #0 status"  			mne="rpi5bf5_dht22_0_status" as_string="true"/>
+
+  <EPICS_PV PV="rpi5bf5:0:humidity"  			description="rpi5bf5 DHT22 #0 humidity %"  			mne="rpi5bf5_dht22_0_humidity" display_format="%.1f"/>
+  <EPICS_PV PV="rpi5bf5:0:humidity:1m"  		description="rpi5bf5 DHT22 #0 humidity 1m avg"  	mne="rpi5bf5_dht22_0_humidity_1m" display_format="%.2f"/>
+  <EPICS_PV PV="rpi5bf5:0:humidity:1m:sdev"  	description="rpi5bf5 DHT22 #0 humidity 1m sdev"  	mne="rpi5bf5_dht22_0_humidity_1m_sdev" display_format="%.2f"/>
+  <EPICS_PV PV="rpi5bf5:0:humidity:15m"  		description="rpi5bf5 DHT22 #0 humidity 15m avg"  	mne="rpi5bf5_dht22_0_humidity_15m" display_format="%.2f"/>
+  <EPICS_PV PV="rpi5bf5:0:humidity:60m"  		description="rpi5bf5 DHT22 #0 humidity 60m avg"  	mne="rpi5bf5_dht22_0_humidity_60m" display_format="%.3f"/>
+  <EPICS_PV PV="rpi5bf5:0:humidity:15m:sdev"  	description="rpi5bf5 DHT22 #0 humidity 15m sdev"  	mne="rpi5bf5_dht22_0_humidity_15m_sdev" display_format="%.3f"/>
+  <EPICS_PV PV="rpi5bf5:0:humidity:60m:sdev"  	description="rpi5bf5 DHT22 #0 humidity 60m sdev"  	mne="rpi5bf5_dht22_0_humidity_60m_sdev" display_format="%.3f"/>
+
+  <EPICS_PV PV="rpi5bf5:0:temperature" 			description="rpi5bf5 DHT22 #0 temperature C"  		mne="rpi5bf5_dht22_0_temperature" 			display_format="%.1f"/>
+  <EPICS_PV PV="rpi5bf5:0:temperature:1m"  		description="rpi5bf5 DHT22 #0 temperature 1m avg"  	mne="rpi5bf5_dht22_0_temperature_1m"		display_format="%.2f"/>
+  <EPICS_PV PV="rpi5bf5:0:temperature:1m:sdev"  description="rpi5bf5 DHT22 #0 temperature 1m sdev"  mne="rpi5bf5_dht22_0_temperature_1m_sdev"	display_format="%.2f"/>
+  <EPICS_PV PV="rpi5bf5:0:temperature:15m"  	description="rpi5bf5 DHT22 #0 temperature 15m avg"  mne="rpi5bf5_dht22_0_temperature_15m"		display_format="%.2f"/>
+  <EPICS_PV PV="rpi5bf5:0:temperature:15m:sdev" description="rpi5bf5 DHT22 #0 temperature 15m sdev" mne="rpi5bf5_dht22_0_temperature_15m_sdev"	display_format="%.2f"/>
+  <EPICS_PV PV="rpi5bf5:0:temperature:60m"  	description="rpi5bf5 DHT22 #0 temperature 60m avg"  mne="rpi5bf5_dht22_0_temperature_60m"		display_format="%.3f"/>
+  <EPICS_PV PV="rpi5bf5:0:temperature:60m:sdev" description="rpi5bf5 DHT22 #0 temperature 60m sdev" mne="rpi5bf5_dht22_0_temperature_60m_sdev"	display_format="%.3f"/>
+
+</pvwatch>

@@ -12,3 +12,13 @@ autosave/
 
 # example application(s)
 dht22
+
+# pvWebMonitor
+pvWebMonitor/log_file.txt
+pvWebMonitor/index.html
+pvWebMonitor/livedata.html
+pvWebMonitor/log-manage.txt
+pvWebMonitor/pid.txt
+pvWebMonitor/pvlist.html
+pvWebMonitor/rawdata.html
+pvWebMonitor/rawdata.xml

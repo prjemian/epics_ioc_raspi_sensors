@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<pvWebMonitor__config version="1.0.1">
+
+  <!-- PVs to be monitored -->
+  <var name="PVLIST_FILE" 				value="pvlist.xml" />
+
+  <!-- absolute directory path to WWW site on local file system -->
+  <var name="LOCAL_WWW_LIVEDATA_DIR" 	value="/home/pi/ioc/pvWebMonitor" />
+
+  <!-- writing messages to log file -->
+  <var name="LOG_INTERVAL_S" 			value="300"  type="float" />
+
+  <!-- updates to HTML pages -->
+  <var name="REPORT_INTERVAL_S" 		value="10"  type="float" />
+  
+  <!-- sleeps at end of main loop -->
+  <var name="SLEEP_INTERVAL_S" 			value="0.1"  type="float" />
+
+  <!-- another logging message interval -->
+  <var name="MAINLOOP_COUNTER_TRIGGER" 	value="10000" type="int" />
+
+  <!-- files with these name patterns (glob style match) 
+       will be copied from project dir to www dir
+       (upper/lower case variants will be searched as well)
+       
+       uses Python ``fnmatch.filter()``
+  -->
+  <pattern value="*.html" /> <!-- web pages -->
+  <pattern value="*.gif" />  <!-- images -->
+  <pattern value="*.jpeg" /> <!-- images -->
+  <pattern value="*.jpg" />  <!-- images -->
+  <pattern value="*.png" />  <!-- images -->
+  <pattern value="*.xsl" />  <!-- XML stylesheets -->
+  <pattern value="*.txt" />  <!-- text -->
+  <pattern value="*.pdf" />  <!-- documentation -->
+  
+</pvWebMonitor__config>
