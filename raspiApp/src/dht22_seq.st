@@ -36,6 +36,7 @@ option -w;		/* Suppress warnings */
 #define STATUS_NO_ERROR  0
 #define STATUS_INVALID   1
 #define WIRINGPI_SETUP_FAILURE   -1
+#define DHT22_MINIMUM_READING_INTERVAL_S   2.0
 
 #define SECONDS_1M 60
 #define SECONDS_15M (SECONDS_1M*15)
@@ -136,7 +137,7 @@ ss dht22_seq
         when( available && take_reading )
         {
 %%          time_now = time(NULL);
-%%			timer_reading = time_now + 1;
+%%			timer_reading = time_now + DHT22_MINIMUM_READING_INTERVAL_S;
 			take_reading = 0;
         } state reading
 
