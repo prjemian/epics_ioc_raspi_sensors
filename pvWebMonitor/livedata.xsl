@@ -118,48 +118,58 @@
                         <th>description</th>
                         <th>value</th>
                     </tr>
+		            <tr>
+						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_tod']/description"/></td>
+						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_tod']/value"/></td>
+				    </tr>
                     <tr>
-						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='hostname']/description"/></td>
-						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='hostname']/value"/></td>
+						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_status']/description"/></td>
+						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_status']/value"/></td>
 				    </tr>
 		            <tr>
-						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='engineer']/description"/></td>
-						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='engineer']/value"/></td>
-				    </tr>
-		            <tr>
-						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='starttod']/description"/></td>
-						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='starttod']/value"/></td>
-				    </tr>
-		            <tr>
-						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='uptime']/description"/></td>
-						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='uptime']/value"/></td>
-				    </tr>
-		            <tr>
-						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='tod']/description"/></td>
-						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='tod']/value"/></td>
+						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_available']/description"/></td>
+						<td align="center" bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_available']/value"/></td>
 				    </tr>
                 </table>
                 
                 <br/>
                 <hr />
 
-                <h4>motors</h4>
+                <h4>DHT22 sensor</h4>
                 <table border="2">
                     <tr style="background-color: grey; color: white;">
-                        <th>motor</th>
+                        <th>measure</th>
                         <th>value</th>
+                        <th>1m mean</th>
+                        <th>1m dev</th>
+                        <th>15m mean</th>
+                        <th>15m dev</th>
+                        <th>60m mean</th>
+                        <th>60m dev</th>
                         <th>last updated</th>
                     </tr>
                     <tr>
-                        <td><xsl:value-of select="//pv[@id='DCM_theta']/description"/></td>
-                        <td bgcolor="white"><xsl:value-of select="//pv[@id='DCM_theta']/value"/></td>
-                        <td><xsl:value-of select="//pv[@id='DCM_theta']/timestamp"/></td>
+                        <td><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_humidity']/description"/></td>
+                        <td bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_humidity']/value"/></td>
+                        <td bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_humidity_1m']/value"/></td>
+                        <td><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_humidity_1m_sdev']/value"/></td>
+                        <td bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_humidity_15m']/value"/></td>
+                        <td><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_humidity_15m_sdev']/value"/></td>
+                        <td bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_humidity_60m']/value"/></td>
+                        <td><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_humidity_60m_sdev']/value"/></td>
+                        <td><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_humidity']/timestamp"/></td>
                     </tr>
                     
                     <tr>
-                        <td><xsl:value-of select="//pv[@id='VDM_Stripe']/description"/></td>
-                        <td bgcolor="white"><xsl:value-of select="//pv[@id='VDM_Stripe']/value"/></td>
-                        <td><xsl:value-of select="//pv[@id='VDM_Stripe']/timestamp"/></td>
+                        <td><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_temperature']/description"/></td>
+                        <td bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_temperature']/value"/></td>
+                        <td bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_temperature_1m']/value"/></td>
+                        <td><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_temperature_1m_sdev']/value"/></td>
+                        <td bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_temperature_15m']/value"/></td>
+                        <td><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_temperature_15m_sdev']/value"/></td>
+                        <td bgcolor="white"><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_temperature_60m']/value"/></td>
+                        <td><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_temperature_60m_sdev']/value"/></td>
+                        <td><xsl:value-of select="//pv[@id='rpi5bf5_dht22_0_temperature']/timestamp"/></td>
                     </tr>
                 </table>
                 
