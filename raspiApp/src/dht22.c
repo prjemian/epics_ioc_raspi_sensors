@@ -91,10 +91,10 @@ int read_dht22_dat(int dhtpin, float *h, float *t)
     if ((dht22_dat[2] & 0x80) != 0)  *t *= -1;
 
     // invalid if out of range
-    if *t < TEMPERATURE_RANGE_LO return STATUS_INVALID;
-    if *t > TEMPERATURE_RANGE_HI return STATUS_INVALID;
-    if *h < HUMIDITY_RANGE_LO return STATUS_INVALID;
-    if *h > HUMIDITY_RANGE_HI return STATUS_INVALID;
+    if (*t < TEMPERATURE_RANGE_LO) return STATUS_INVALID;
+    if (*t > TEMPERATURE_RANGE_HI) return STATUS_INVALID;
+    if (*h < HUMIDITY_RANGE_LO) return STATUS_INVALID;
+    if (*h > HUMIDITY_RANGE_HI) return STATUS_INVALID;
 
     return STATUS_NO_ERROR;
   }
