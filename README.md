@@ -36,7 +36,7 @@ Once built, the SD card can be imaged to create many such Raspberry Pi sensor
 IOCs, each having an identical array of sensors.
 The only customization needed for each RPi is to set its unique hostname.
 My practice is to base this name on the last four text characters in the output of 
-`/proc/cpuino` (part of the unique RPi serial number).
+`/proc/cpuinfo` (part of the unique RPi serial number).
 The IOC is configured to use this as its PV prefix, ensuring (with some confidence)
 that all its PVs will unique on the subnet.  Such as:
 
