@@ -42,13 +42,14 @@ raspi_Common_DBD += base.dbd
 #	raspi_Common_LIBS := caputRecorder $(raspi_Common_LIBS)
 #endif
 
+raspi_SRCS += stats.c
+raspi_SRCS += dht22.c
+
 ifdef SNCSEQ
     raspi_Common_LIBS += seq pv
     raspi_LIBS += seq pv
 
 	# build DHT22 support in SNL
-	raspi_SRCS += stats.c
-	raspi_SRCS += dht22.c
 	raspi_SRCS += dht22_seq.st
     raspi_Common_DBD += dht22_seq.dbd
 
