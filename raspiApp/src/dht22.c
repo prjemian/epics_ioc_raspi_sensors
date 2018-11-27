@@ -1,7 +1,7 @@
 /*  dht22.c:
- *	library for dht22 using wiringPi functions
- *	Based on the existing dht11.c
- *	Amended by technion@lolware.net
+ *  library for dht22 using wiringPi functions
+ *  Based on the existing dht11.c
+ *  Amended by technion@lolware.net
  */
 
 #include <wiringPi.h>
@@ -41,22 +41,20 @@ int read_dht22_dat(int dhtpin, float *h, float *t)
   uint8_t laststate = HIGH;
   uint8_t counter = 0;
   uint8_t j = 0, i;
-  
-  /* printf("read_dht22_dat(%d)\n", dhtpin); */
 
   dht22_dat[0] = dht22_dat[1] = dht22_dat[2] = dht22_dat[3] = dht22_dat[4] = 0;
 
-  // pull pin down for 18 milliseconds
-  pinMode(dhtpin, OUTPUT);
-  digitalWrite(dhtpin, HIGH);
+  // initiate a reading
+  pinMode(dhtpin, OUTPUT);    // transmit
+  digitalWrite(dhtpin, HIGH); // clear the communications
   delay(10);
-  digitalWrite(dhtpin, LOW);
+  digitalWrite(dhtpin, LOW);  // pull pin down for 18 milliseconds
   delay(18);
-  // then pull it up for 40 microseconds
-  digitalWrite(dhtpin, HIGH);
-  delayMicroseconds(40); 
+
+  digitalWrite(dhtpin, HIGH); // pull pin up for 40 microseconds
+  delayMicroseconds(40);
   // prepare to read the pin
-  pinMode(dhtpin, INPUT);
+  pinMode(dhtpin, INPUT);     // receive
 
   // detect change and read data
   for ( i=0; i< MAXTIMINGS; i++) {
@@ -83,25 +81,22 @@ int read_dht22_dat(int dhtpin, float *h, float *t)
     }
   }
 
-  // check we read 40 bits (8bit x 5 ) + verify checksum in the last byte
-  // print it out if data is good
-  if ((j >= 40) && 
-      (dht22_dat[4] == ((dht22_dat[0] + dht22_dat[1] + dht22_dat[2] + dht22_dat[3]) & 0xFF)) ) {
-        /* float t, h; */
-        *h = (float)dht22_dat[0] * 256 + (float)dht22_dat[1];
-        *h /= 10;
-        *t = (float)(dht22_dat[2] & 0x7F)* 256 + (float)dht22_dat[3];
-        *t /= 10.0;
-        if ((dht22_dat[2] & 0x80) != 0)  *t *= -1;
+  // check we received 40 bits (8bit x 5) & verify checksum in the last byte
+  if ((j >= 40) && (dht22_dat[4] == ((dht22_dat[0] + dht22_dat[1] + dht22_dat[2] + dht22_dat[3]) & 0xFF)) ) {
+    /* float t, h; */
+    *h = (float)dht22_dat[0] * 256 + (float)dht22_dat[1];
+    *h /= 10;
+    *t = (float)(dht22_dat[2] & 0x7F)* 256 + (float)dht22_dat[3];
+    *t /= 10.0;
+    if ((dht22_dat[2] & 0x80) != 0)  *t *= -1;
 
+    // invalid if out of range
+    if *t < TEMPERATURE_RANGE_LO return STATUS_INVALID;
+    if *t > TEMPERATURE_RANGE_HI return STATUS_INVALID;
+    if *h < HUMIDITY_RANGE_LO return STATUS_INVALID;
+    if *h > HUMIDITY_RANGE_HI return STATUS_INVALID;
 
-    /*printf("Humidity = %.2f %% Temperature = %.2f *C \n", *h, *t );*/
     return STATUS_NO_ERROR;
   }
-  /*else
-  {
-    printf("Data not good, skip\n");
-    return 0;
-  }*/
   return STATUS_INVALID;
 }
