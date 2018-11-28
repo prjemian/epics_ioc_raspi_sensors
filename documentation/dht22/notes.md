@@ -170,7 +170,7 @@ sudo apt-get install screen
 ## Automatic logging after reboot
 
 To make this software run atuomatically after reboot,
-we'll right a shell script that will start the logging.
+we'll write a shell script that will start the logging.
 An additional feature of the shell script is to check that
 the logging is running and restart logging if the software
 has stopped.  We can run this script periodically (say, every
@@ -183,7 +183,63 @@ We have a more
 [robust script](https://github.com/APS-2BM-MIC/ipython-user2bmb/blob/master/profile_2bmb/startup/ioc2bmbmona/2bmbmona.sh)
 which could break but, in practice, works well.  It will need just
 a bit of modification for our project.  We'll call it `manage.sh` since it
-will manage our logging process.
+will manage our logging process.  It's a bit long so we just refer you to the file
+in this directory.
+
+```
+#=====================
+# call periodically (every 5 minutes) to see if process is running
+#=====================
+#      field      allowed values
+#      -----      --------------
+#      minute     0-59
+#      hour       0-23
+#      day of month   1-31
+#      month      1-12 (or names, see below)
+#      day of week    0-7 (0 or 7 is Sun, or use names)
+
+*/5 * * * * /home/pi/Documents/Adafruit_Python_DHT/examples/manage.sh checkup 2>&1 > /dev/null
+```
+
+We also need to modify our Python code to have it append new data
+directly to the designated log file.  The new file:
+
+```
+#!/usr/bin/env python
+
+import datetime
+import sys
+import time
+import Adafruit_DHT
+
+GPIO_PIN=4
+SENSOR_MODEL=22
+MINIMUM_WAIT_TIME=2.0
+SLEEP_TIME=0.01
+
+t_next = 0
+
+fp = None
+if len(sys.argv) > 1:
+	fp = open(sys.argv[1], "a")
+	
+while True:
+	if time.time() >= t_next:
+		humidity, temperature = Adafruit_DHT.read_retry(SENSOR_MODEL, GPIO_PIN)
+		if humidity is not None and temperature is not None:
+			f = str(datetime.datetime.now())
+			f += '\t{0:0.1f}'.format(temperature)
+			f += '\t{0:0.1f}'.format(humidity)
+			print(f)
+			sys.stdout.flush()
+			if fp is not None:
+				fp.write(f)
+				fp.write("\n")
+				fp.flush()
+		t_next = time.time() + MINIMUM_WAIT_TIME
+	else:
+		time.sleep(SLEEP_TIME)
+```
 
 # Logging and visualizing logged data
 
