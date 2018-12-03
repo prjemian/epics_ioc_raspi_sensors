@@ -45,6 +45,20 @@ date: 2018-11-26
       will be `rpiUVWX`, using the last four characters of the CPU
       serial number.  If the last four are not enough to be unique, try the 
       last five or six.  Or, make up your own name scheme.
+   1. to set at boot time, type this command:
+   
+      ```
+      sudo nano /etc/init.d/hostname.sh
+      ```
+      
+      and enter these lines at the top of the `do_start()` function
+   
+      ```
+      # assign host name at boot time using device serial number
+      echo "rpi`cat /proc/device-tree/serial-number | tail -c5`" > /etc/hostname
+      ```
+      
+      The `-c5` option to `tail` will select the last four characters.
 1. open system configuration tool (`sudo raspi-config` or the GUI tool)
    1. change host name (under *Network Options*) to "rpiUVWX" as above
    1. allow these protocols (*Interfacing Options*):  
