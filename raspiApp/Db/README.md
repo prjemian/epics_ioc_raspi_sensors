@@ -147,3 +147,5 @@ temperature *vs.* time results from this bluesky command:
     
 Updates from the sensor are at 2 second (or longer) intervals.  This
 time scan runs for 1 hour (60 minutes * 30 readings at 2 second intervals).
+
+![Plot temperature *vs.* time for 1 hour](dht22-softIoc-1h-scan.jpg)
