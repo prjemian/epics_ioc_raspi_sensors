@@ -11,6 +11,8 @@
 
 # references:
 # softIoc: https://epics-controls.org/resources-and-support/documents/getting-started/#4_Test_EPICS
+# ao record: https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14_Analog_Output
+# ai record: https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14_Analog_Input
 # smoothing: https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14_Analog_Input#Read_and_Convert_Parameters
 
 record(stringout, "$(P)$(C)description") {
