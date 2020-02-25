@@ -11,7 +11,7 @@
 # "Smoothed" values are obtained by updates to associated 
 # ai records with smoothing factors applied.
 
-# softIoc -d dht22-softIoc.db -m "P=gbr:,S=s1:"
+# softIoc -m "P=gbr:,S=s1:" -d dht22-softIoc.db
 
 # references:
 # softIoc: https://epics-controls.org/resources-and-support/documents/getting-started/#4_Test_EPICS
