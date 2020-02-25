@@ -23,6 +23,14 @@ record(stringout, "$(P)$(S)description") {
     field(VAL, "DHT22 sensor")
 }
 
+record(stringout, "$(P)$(S)ymd") {
+    field(DESC, "YYYY-mm-DD")
+}
+
+record(stringout, "$(P)$(S)hms") {
+    field(DESC, "HH:MM:SS")
+}
+
 record(ao, "$(P)$(S)temperature") {
     field(EGU, "C")
     field(DESC, "DHT22 temperature")
