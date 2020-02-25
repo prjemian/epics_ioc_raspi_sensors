@@ -15,6 +15,7 @@ read DHT22, write to EPICS PVs
 """
 
 import Adafruit_DHT
+import datetime
 import epics
 import time
 
@@ -26,7 +27,7 @@ SENSOR = ""
 GPIO_PIN=4
 SENSOR_MODEL=22
 MINIMUM_WAIT_TIME=2.0
-SLEEP_TIME=0.01
+SLEEP_TIME=0.1
 
 
 def DHT22_read():
@@ -39,6 +40,8 @@ def main():
     # connect with EPICS
     t_pv = epics.PV(PREFIX + SENSOR + "temperature")
     h_pv = epics.PV(PREFIX + SENSOR + "humidity")
+    ymd_pv = epics.PV(PREFIX + SENSOR + "ymd")
+    hms_pv = epics.PV(PREFIX + SENSOR + "hms")
     
     t_next = 0
     
@@ -53,6 +56,10 @@ def main():
             t_next = time.time() + MINIMUM_WAIT_TIME
         else:
             time.sleep(SLEEP_TIME)
+        dt = datetime.datetime.now()
+        ymd, hms = dt.isoformat(sep=" ").split(".")[0].split()
+        ymd_pv.put(ymd)
+        hms_pv.put(hms)
 
 
 if __name__ == "__main__":
