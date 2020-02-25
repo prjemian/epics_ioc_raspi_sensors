@@ -73,6 +73,20 @@ The processing chain is:
     raw -> s80 -> s95 -> s99
     noisy   ---->  smoothest
 
+With a minimum readout time of 2 seconds and occasional retries to 
+read the DHT22 sensor, the average time between readings is more like
+2.5 - 3 seconds.  An approximate measure of settling time is obtained
+when the ai record reaches the *unchanged* raw value of the ao record 
+after *N* identical updates.  The next table shows approximate settling 
+times:
+
+signal | period (approximate)
+:----: | ----:
+*raw* | immediate
+`s80` | ~1 min
+`s95` | ~5 min
+`s99` | ~30 min
+
 The EPICS `ai` record provides input
 [smoothing](https://wiki-ext.aps.anl.gov/epics/index.php/RRM_3-14_Analog_Input#Read_and_Convert_Parameters).
 A factor (`SMOO`) is specified for the PV.  The pattern is `:s80` has `SMOO=0.80`.  
