@@ -48,8 +48,8 @@ Then, all PVs will start with `rpi170f:`, such as:
 
 EPICS PV | meaning
 --- | ---
-`rpi1705:pin0:humidity` |  most recent humidity reading
-`rpi1705:pin0:temperature` | most recent temperature reading
+`rpi170f:pin0:humidity` |  most recent humidity reading
+`rpi170f:pin0:temperature` | most recent temperature reading
 
 It is possible but not likely to have two RPIs on your subnet that
 match.  If you are so unlucky, add another digit or two to avoid this.
